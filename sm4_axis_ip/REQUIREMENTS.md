@@ -19,6 +19,8 @@
 | F15 | Synthesis report on the contracted evidence path | DONE | `synth/synth.log` |
 | F16 | Design spec, test plan and verification report | DONE | `docs/` |
 | F17 | Quality-gate dashboard wired to this block | DONE | `monitor/rtl_monitor.py` |
+| F18 | Seedable multi-seed regression with replayable random keys and backpressure | DONE | `sim/regression.log` |
+| F19 | Mutation campaign proving the regression can fail | DONE | `sim/mutation.rpt` |
 
 ## Waived
 
