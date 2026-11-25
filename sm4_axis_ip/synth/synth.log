@@ -1,0 +1,1254 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.71 (git sha1 b4c586fd3, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)
+
+-- Executing script file `synth.ys' --
+
+1. Executing Verilog-2005 frontend: ../rtl/sm4_pkg.sv
+Parsing SystemVerilog input from `../rtl/sm4_pkg.sv' to AST representation.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: ../rtl/sm4_key_schedule.sv
+Parsing SystemVerilog input from `../rtl/sm4_key_schedule.sv' to AST representation.
+Generating RTLIL representation for module `\sm4_key_schedule'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: ../rtl/sm4_core.sv
+Parsing SystemVerilog input from `../rtl/sm4_core.sv' to AST representation.
+Generating RTLIL representation for module `\sm4_core'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: ../rtl/sm4_axis_ip.sv
+Parsing SystemVerilog input from `../rtl/sm4_axis_ip.sv' to AST representation.
+Generating RTLIL representation for module `\sm4_axis_ip'.
+Warning: Replacing memory \in_user_q with list of registers. See ../rtl/sm4_axis_ip.sv:118
+Warning: Replacing memory \in_dest_q with list of registers. See ../rtl/sm4_axis_ip.sv:117
+Warning: Replacing memory \in_id_q with list of registers. See ../rtl/sm4_axis_ip.sv:116
+Warning: Replacing memory \in_last_q with list of registers. See ../rtl/sm4_axis_ip.sv:115
+Warning: Replacing memory \in_strb_q with list of registers. See ../rtl/sm4_axis_ip.sv:114
+Warning: Replacing memory \in_keep_q with list of registers. See ../rtl/sm4_axis_ip.sv:113
+Warning: Replacing memory \in_data_q with list of registers. See ../rtl/sm4_axis_ip.sv:112
+Successfully finished Verilog frontend.
+
+5. Executing HIERARCHY pass (managing design hierarchy).
+
+5.1. Analyzing design hierarchy..
+Top module:  \sm4_axis_ip
+Used module:     \sm4_core
+Used module:     \sm4_key_schedule
+
+5.2. Analyzing design hierarchy..
+Top module:  \sm4_axis_ip
+Used module:     \sm4_core
+Used module:     \sm4_key_schedule
+Removed 0 unused modules.
+
+6. Executing PROC pass (convert processes to netlists).
+
+6.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+6.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 1 dead cases from process $../rtl/sm4_axis_ip.sv:98$proc$471 in module sm4_axis_ip.
+Marked 1 switch rules as full_case in process $../rtl/sm4_axis_ip.sv:98$proc$471 in module sm4_axis_ip.
+Removed 3 dead cases from process $../rtl/sm4_axis_ip.sv:189$proc$447 in module sm4_axis_ip.
+Marked 6 switch rules as full_case in process $../rtl/sm4_axis_ip.sv:189$proc$447 in module sm4_axis_ip.
+Marked 9 switch rules as full_case in process $../rtl/sm4_axis_ip.sv:106$proc$397 in module sm4_axis_ip.
+Marked 2 switch rules as full_case in process $../rtl/sm4_axis_ip.sv:100$proc$394 in module sm4_axis_ip.
+Removed 4 dead cases from process $../rtl/sm4_core.sv:66$proc$326 in module sm4_core.
+Marked 8 switch rules as full_case in process $../rtl/sm4_core.sv:66$proc$326 in module sm4_core.
+Marked 2 switch rules as full_case in process $../rtl/sm4_core.sv:74$proc$321 in module sm4_core.
+Removed 4 dead cases from process $../rtl/sm4_key_schedule.sv:66$proc$264 in module sm4_key_schedule.
+Marked 6 switch rules as full_case in process $../rtl/sm4_key_schedule.sv:66$proc$264 in module sm4_key_schedule.
+Removed 1 dead cases from process $../rtl/sm4_key_schedule.sv:66$proc$259 in module sm4_key_schedule.
+Marked 1 switch rules as full_case in process $../rtl/sm4_key_schedule.sv:66$proc$259 in module sm4_key_schedule.
+Removed 4 dead cases from process $../rtl/sm4_key_schedule.sv:65$proc$223 in module sm4_key_schedule.
+Marked 6 switch rules as full_case in process $../rtl/sm4_key_schedule.sv:65$proc$223 in module sm4_key_schedule.
+Removed 1 dead cases from process $../rtl/sm4_key_schedule.sv:65$proc$218 in module sm4_key_schedule.
+Marked 1 switch rules as full_case in process $../rtl/sm4_key_schedule.sv:65$proc$218 in module sm4_key_schedule.
+Removed 4 dead cases from process $../rtl/sm4_key_schedule.sv:64$proc$182 in module sm4_key_schedule.
+Marked 6 switch rules as full_case in process $../rtl/sm4_key_schedule.sv:64$proc$182 in module sm4_key_schedule.
+Removed 1 dead cases from process $../rtl/sm4_key_schedule.sv:64$proc$177 in module sm4_key_schedule.
+Marked 1 switch rules as full_case in process $../rtl/sm4_key_schedule.sv:64$proc$177 in module sm4_key_schedule.
+Removed 4 dead cases from process $../rtl/sm4_key_schedule.sv:63$proc$141 in module sm4_key_schedule.
+Marked 6 switch rules as full_case in process $../rtl/sm4_key_schedule.sv:63$proc$141 in module sm4_key_schedule.
+Removed 1 dead cases from process $../rtl/sm4_key_schedule.sv:63$proc$136 in module sm4_key_schedule.
+Marked 1 switch rules as full_case in process $../rtl/sm4_key_schedule.sv:63$proc$136 in module sm4_key_schedule.
+Removed 1 dead cases from process $../rtl/sm4_key_schedule.sv:76$proc$63 in module sm4_key_schedule.
+Marked 3 switch rules as full_case in process $../rtl/sm4_key_schedule.sv:76$proc$63 in module sm4_key_schedule.
+Removed a total of 29 dead cases.
+
+6.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 135 assignments to connections.
+
+6.4. Executing PROC_INIT pass (extract init attributes).
+
+6.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \axi_st_areset_n in `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+Found async reset \axi_st_areset_n in `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+Found async reset \arst_n in `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+Found async reset \arst_n in `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+
+6.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 24 switches.
+<suppressed ~37 debug messages>
+
+6.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:98$proc$471'.
+     1/1: $1$mem2reg_rd$\in_data_q$../rtl/sm4_axis_ip.sv:98$375_DATA[127:0]$473
+Creating decoders for process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+     1/23: $3$mem2reg_rd$\in_user_q$../rtl/sm4_axis_ip.sv:204$385_DATA[7:0]$469
+     2/23: $3$mem2reg_rd$\in_dest_q$../rtl/sm4_axis_ip.sv:203$384_DATA[7:0]$468
+     3/23: $3$mem2reg_rd$\in_id_q$../rtl/sm4_axis_ip.sv:202$383_DATA[7:0]$467
+     4/23: $2$mem2reg_rd$\in_user_q$../rtl/sm4_axis_ip.sv:204$385_DATA[7:0]$466
+     5/23: $2$mem2reg_rd$\in_user_q$../rtl/sm4_axis_ip.sv:204$385_ADDR[0:0]$465
+     6/23: $2$mem2reg_rd$\in_dest_q$../rtl/sm4_axis_ip.sv:203$384_DATA[7:0]$464
+     7/23: $2$mem2reg_rd$\in_dest_q$../rtl/sm4_axis_ip.sv:203$384_ADDR[0:0]$463
+     8/23: $2$mem2reg_rd$\in_id_q$../rtl/sm4_axis_ip.sv:202$383_DATA[7:0]$462
+     9/23: $2$mem2reg_rd$\in_id_q$../rtl/sm4_axis_ip.sv:202$383_ADDR[0:0]$461
+    10/23: $1$mem2reg_rd$\in_user_q$../rtl/sm4_axis_ip.sv:204$385_DATA[7:0]$460
+    11/23: $1$mem2reg_rd$\in_user_q$../rtl/sm4_axis_ip.sv:204$385_ADDR[0:0]$459
+    12/23: $1$mem2reg_rd$\in_dest_q$../rtl/sm4_axis_ip.sv:203$384_DATA[7:0]$458
+    13/23: $1$mem2reg_rd$\in_dest_q$../rtl/sm4_axis_ip.sv:203$384_ADDR[0:0]$457
+    14/23: $1$mem2reg_rd$\in_id_q$../rtl/sm4_axis_ip.sv:202$383_DATA[7:0]$456
+    15/23: $1$mem2reg_rd$\in_id_q$../rtl/sm4_axis_ip.sv:202$383_ADDR[0:0]$455
+    16/23: $0\active_user_q[7:0]
+    17/23: $0\active_dest_q[7:0]
+    18/23: $0\active_id_q[7:0]
+    19/23: $0\result_user_q[7:0]
+    20/23: $0\result_dest_q[7:0]
+    21/23: $0\result_id_q[7:0]
+    22/23: $0\result_valid_q[0:0]
+    23/23: $0\result_q[127:0]
+Creating decoders for process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+     1/46: $2$mem2reg_wr$\in_user_q$../rtl/sm4_axis_ip.sv:130$382_ADDR[0:0]$441
+     2/46: $2$mem2reg_wr$\in_user_q$../rtl/sm4_axis_ip.sv:130$382_DATA[7:0]$442
+     3/46: $2$mem2reg_wr$\in_dest_q$../rtl/sm4_axis_ip.sv:129$381_ADDR[0:0]$439
+     4/46: $2$mem2reg_wr$\in_dest_q$../rtl/sm4_axis_ip.sv:129$381_DATA[7:0]$440
+     5/46: $2$mem2reg_wr$\in_id_q$../rtl/sm4_axis_ip.sv:128$380_ADDR[0:0]$437
+     6/46: $2$mem2reg_wr$\in_id_q$../rtl/sm4_axis_ip.sv:128$380_DATA[7:0]$438
+     7/46: $2$mem2reg_wr$\in_last_q$../rtl/sm4_axis_ip.sv:127$379_ADDR[0:0]$435
+     8/46: $2$mem2reg_wr$\in_last_q$../rtl/sm4_axis_ip.sv:127$379_DATA[0:0]$436
+     9/46: $2$mem2reg_wr$\in_strb_q$../rtl/sm4_axis_ip.sv:126$378_ADDR[0:0]$433
+    10/46: $2$mem2reg_wr$\in_strb_q$../rtl/sm4_axis_ip.sv:126$378_DATA[15:0]$434
+    11/46: $2$mem2reg_wr$\in_keep_q$../rtl/sm4_axis_ip.sv:125$377_ADDR[0:0]$431
+    12/46: $2$mem2reg_wr$\in_keep_q$../rtl/sm4_axis_ip.sv:125$377_DATA[15:0]$432
+    13/46: $2$mem2reg_wr$\in_data_q$../rtl/sm4_axis_ip.sv:124$376_ADDR[0:0]$429
+    14/46: $2$mem2reg_wr$\in_data_q$../rtl/sm4_axis_ip.sv:124$376_DATA[127:0]$430
+    15/46: $1$mem2reg_wr$\in_user_q$../rtl/sm4_axis_ip.sv:130$382_DATA[7:0]$428
+    16/46: $1$mem2reg_wr$\in_user_q$../rtl/sm4_axis_ip.sv:130$382_ADDR[0:0]$427
+    17/46: $1$mem2reg_wr$\in_dest_q$../rtl/sm4_axis_ip.sv:129$381_DATA[7:0]$426
+    18/46: $1$mem2reg_wr$\in_dest_q$../rtl/sm4_axis_ip.sv:129$381_ADDR[0:0]$425
+    19/46: $1$mem2reg_wr$\in_id_q$../rtl/sm4_axis_ip.sv:128$380_DATA[7:0]$424
+    20/46: $1$mem2reg_wr$\in_id_q$../rtl/sm4_axis_ip.sv:128$380_ADDR[0:0]$423
+    21/46: $1$mem2reg_wr$\in_last_q$../rtl/sm4_axis_ip.sv:127$379_DATA[0:0]$422
+    22/46: $1$mem2reg_wr$\in_last_q$../rtl/sm4_axis_ip.sv:127$379_ADDR[0:0]$421
+    23/46: $1$mem2reg_wr$\in_strb_q$../rtl/sm4_axis_ip.sv:126$378_DATA[15:0]$420
+    24/46: $1$mem2reg_wr$\in_strb_q$../rtl/sm4_axis_ip.sv:126$378_ADDR[0:0]$419
+    25/46: $1$mem2reg_wr$\in_keep_q$../rtl/sm4_axis_ip.sv:125$377_DATA[15:0]$418
+    26/46: $1$mem2reg_wr$\in_keep_q$../rtl/sm4_axis_ip.sv:125$377_ADDR[0:0]$417
+    27/46: $1$mem2reg_wr$\in_data_q$../rtl/sm4_axis_ip.sv:124$376_DATA[127:0]$416
+    28/46: $1$mem2reg_wr$\in_data_q$../rtl/sm4_axis_ip.sv:124$376_ADDR[0:0]$415
+    29/46: $0\in_count_q[1:0]
+    30/46: $1$fordecl_block$373.i[31:0]$414
+    31/46: $0\in_user_q[1][7:0]
+    32/46: $0\in_user_q[0][7:0]
+    33/46: $0\in_dest_q[1][7:0]
+    34/46: $0\in_dest_q[0][7:0]
+    35/46: $0\in_id_q[1][7:0]
+    36/46: $0\in_id_q[0][7:0]
+    37/46: $0\in_last_q[1][0:0]
+    38/46: $0\in_last_q[0][0:0]
+    39/46: $0\in_strb_q[1][15:0]
+    40/46: $0\in_strb_q[0][15:0]
+    41/46: $0\in_keep_q[1][15:0]
+    42/46: $0\in_keep_q[0][15:0]
+    43/46: $0\in_data_q[1][127:0]
+    44/46: $0\in_data_q[0][127:0]
+    45/46: $0\in_rd_q[0:0]
+    46/46: $0\in_wr_q[0:0]
+Creating decoders for process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:100$proc$394'.
+     1/2: $2\in_count_c[1:0]
+     2/2: $1\in_count_c[1:0]
+Creating decoders for process `\sm4_core.$../rtl/sm4_core.sv:66$proc$326'.
+     1/8: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:222$310.$result[31:0]$365
+     2/8: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:222$309.$result[31:0]$361
+     3/8: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:222$308.$result[31:0]$357
+     4/8: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:222$307.$result[31:0]$353
+     5/8: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:213$306.$result[7:0]$352
+     6/8: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:213$305.$result[7:0]$351
+     7/8: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:214$304.$result[7:0]$350
+     8/8: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:214$303.$result[7:0]$349
+Creating decoders for process `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+     1/9: $0\done_o[0:0]
+     2/9: $0\x3_q[31:0]
+     3/9: $0\x2_q[31:0]
+     4/9: $0\x1_q[31:0]
+     5/9: $0\x0_q[31:0]
+     6/9: $0\mode_q[0:0]
+     7/9: $0\result_o[127:0]
+     8/9: $0\round_q[4:0]
+     9/9: $0\state_q[1:0]
+Creating decoders for process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:66$proc$264'.
+     1/6: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:229$52.$result[31:0]$294
+     2/6: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:229$51.$result[31:0]$290
+     3/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:213$50.$result[7:0]$289
+     4/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:213$49.$result[7:0]$288
+     5/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:214$48.$result[7:0]$287
+     6/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:214$47.$result[7:0]$286
+Creating decoders for process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:66$proc$259'.
+     1/1: $1\sm4_pkg::f_ck$func$../rtl/sm4_key_schedule.sv:66$44.$result[31:0]$263
+Creating decoders for process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:65$proc$223'.
+     1/6: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:229$43.$result[31:0]$253
+     2/6: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:229$42.$result[31:0]$249
+     3/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:213$41.$result[7:0]$248
+     4/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:213$40.$result[7:0]$247
+     5/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:214$39.$result[7:0]$246
+     6/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:214$38.$result[7:0]$245
+Creating decoders for process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:65$proc$218'.
+     1/1: $1\sm4_pkg::f_ck$func$../rtl/sm4_key_schedule.sv:65$35.$result[31:0]$222
+Creating decoders for process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:64$proc$182'.
+     1/6: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:229$34.$result[31:0]$212
+     2/6: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:229$33.$result[31:0]$208
+     3/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:213$32.$result[7:0]$207
+     4/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:213$31.$result[7:0]$206
+     5/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:214$30.$result[7:0]$205
+     6/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:214$29.$result[7:0]$204
+Creating decoders for process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:64$proc$177'.
+     1/1: $1\sm4_pkg::f_ck$func$../rtl/sm4_key_schedule.sv:64$26.$result[31:0]$181
+Creating decoders for process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:63$proc$141'.
+     1/6: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:229$25.$result[31:0]$171
+     2/6: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:229$24.$result[31:0]$167
+     3/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:213$23.$result[7:0]$166
+     4/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:213$22.$result[7:0]$165
+     5/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:214$21.$result[7:0]$164
+     6/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:214$20.$result[7:0]$163
+Creating decoders for process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:63$proc$136'.
+     1/1: $1\sm4_pkg::f_ck$func$../rtl/sm4_key_schedule.sv:63$17.$result[31:0]$140
+Creating decoders for process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+     1/22: $3$lookahead\rk_o$62[1023:0]$89
+     2/22: $3$bitselwrite$pos$../rtl/sm4_key_schedule.sv:111$13[31:0]$85
+     3/22: $3$bitselwrite$pos$../rtl/sm4_key_schedule.sv:123$16[31:0]$88
+     4/22: $3$bitselwrite$pos$../rtl/sm4_key_schedule.sv:119$15[31:0]$87
+     5/22: $3$bitselwrite$pos$../rtl/sm4_key_schedule.sv:115$14[31:0]$86
+     6/22: $2$lookahead\rk_o$62[1023:0]$79
+     7/22: $2$bitselwrite$pos$../rtl/sm4_key_schedule.sv:123$16[31:0]$78
+     8/22: $2$bitselwrite$pos$../rtl/sm4_key_schedule.sv:119$15[31:0]$77
+     9/22: $2$bitselwrite$pos$../rtl/sm4_key_schedule.sv:115$14[31:0]$76
+    10/22: $2$bitselwrite$pos$../rtl/sm4_key_schedule.sv:111$13[31:0]$75
+    11/22: $1$lookahead\rk_o$62[1023:0]$74
+    12/22: $1$bitselwrite$pos$../rtl/sm4_key_schedule.sv:123$16[31:0]$73
+    13/22: $1$bitselwrite$pos$../rtl/sm4_key_schedule.sv:119$15[31:0]$72
+    14/22: $1$bitselwrite$pos$../rtl/sm4_key_schedule.sv:115$14[31:0]$71
+    15/22: $1$bitselwrite$pos$../rtl/sm4_key_schedule.sv:111$13[31:0]$70
+    16/22: $0\k3_q[31:0]
+    17/22: $0\k2_q[31:0]
+    18/22: $0\k1_q[31:0]
+    19/22: $0\k0_q[31:0]
+    20/22: $0\round_q[4:0]
+    21/22: $0\state_q[1:0]
+    22/22: $0\rk_valid_o[0:0]
+
+6.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\sm4_axis_ip.$mem2reg_rd$\in_data_q$../rtl/sm4_axis_ip.sv:98$375_DATA' from process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:98$proc$471'.
+No latch inferred for signal `\sm4_axis_ip.\in_count_c' from process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:100$proc$394'.
+No latch inferred for signal `\sm4_core.\sm4_pkg::f_t$func$../rtl/sm4_core.sv:66$300.$result' from process `\sm4_core.$../rtl/sm4_core.sv:66$proc$326'.
+No latch inferred for signal `\sm4_key_schedule.\sm4_pkg::f_t_key$func$../rtl/sm4_key_schedule.sv:66$8.$result' from process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:66$proc$264'.
+No latch inferred for signal `\sm4_key_schedule.\sm4_pkg::f_ck$func$../rtl/sm4_key_schedule.sv:66$7.$result' from process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:66$proc$259'.
+No latch inferred for signal `\sm4_key_schedule.\sm4_pkg::f_t_key$func$../rtl/sm4_key_schedule.sv:65$6.$result' from process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:65$proc$223'.
+No latch inferred for signal `\sm4_key_schedule.\sm4_pkg::f_ck$func$../rtl/sm4_key_schedule.sv:65$5.$result' from process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:65$proc$218'.
+No latch inferred for signal `\sm4_key_schedule.\sm4_pkg::f_t_key$func$../rtl/sm4_key_schedule.sv:64$4.$result' from process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:64$proc$182'.
+No latch inferred for signal `\sm4_key_schedule.\sm4_pkg::f_ck$func$../rtl/sm4_key_schedule.sv:64$3.$result' from process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:64$proc$177'.
+No latch inferred for signal `\sm4_key_schedule.\sm4_pkg::f_t_key$func$../rtl/sm4_key_schedule.sv:63$2.$result' from process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:63$proc$141'.
+No latch inferred for signal `\sm4_key_schedule.\sm4_pkg::f_ck$func$../rtl/sm4_key_schedule.sv:63$1.$result' from process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:63$proc$136'.
+
+6.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\sm4_axis_ip.\result_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$977' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\result_valid_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$982' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\result_id_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$987' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\result_dest_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$992' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\result_user_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$997' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\active_id_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$1002' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\active_dest_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$1007' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\active_user_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$1012' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_rd$\in_id_q$../rtl/sm4_axis_ip.sv:202$383_ADDR' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$1017' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_rd$\in_id_q$../rtl/sm4_axis_ip.sv:202$383_DATA' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$1022' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_rd$\in_dest_q$../rtl/sm4_axis_ip.sv:203$384_ADDR' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$1027' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_rd$\in_dest_q$../rtl/sm4_axis_ip.sv:203$384_DATA' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$1032' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_rd$\in_user_q$../rtl/sm4_axis_ip.sv:204$385_ADDR' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$1037' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_rd$\in_user_q$../rtl/sm4_axis_ip.sv:204$385_DATA' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$1042' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_wr_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1047' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_rd_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1052' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_count_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1057' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$fordecl_block$373.i' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1062' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_data_q[0]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1067' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_data_q[1]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1072' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_keep_q[0]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1077' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_keep_q[1]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1082' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_strb_q[0]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1087' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_strb_q[1]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1092' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_last_q[0]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1097' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_last_q[1]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1102' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_id_q[0]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1107' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_id_q[1]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1112' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_dest_q[0]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1117' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_dest_q[1]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1122' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_user_q[0]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1127' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_user_q[1]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1132' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_data_q$../rtl/sm4_axis_ip.sv:124$376_ADDR' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1137' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_data_q$../rtl/sm4_axis_ip.sv:124$376_DATA' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1142' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_keep_q$../rtl/sm4_axis_ip.sv:125$377_ADDR' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1147' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_keep_q$../rtl/sm4_axis_ip.sv:125$377_DATA' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1152' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_strb_q$../rtl/sm4_axis_ip.sv:126$378_ADDR' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1157' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_strb_q$../rtl/sm4_axis_ip.sv:126$378_DATA' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1162' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_last_q$../rtl/sm4_axis_ip.sv:127$379_ADDR' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1167' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_last_q$../rtl/sm4_axis_ip.sv:127$379_DATA' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1172' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_id_q$../rtl/sm4_axis_ip.sv:128$380_ADDR' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1177' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_id_q$../rtl/sm4_axis_ip.sv:128$380_DATA' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1182' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_dest_q$../rtl/sm4_axis_ip.sv:129$381_ADDR' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1187' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_dest_q$../rtl/sm4_axis_ip.sv:129$381_DATA' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1192' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_user_q$../rtl/sm4_axis_ip.sv:130$382_ADDR' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1197' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_user_q$../rtl/sm4_axis_ip.sv:130$382_DATA' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1202' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_core.\state_q' using process `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+  created $adff cell `$procdff$1207' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_core.\round_q' using process `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+  created $adff cell `$procdff$1212' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_core.\done_o' using process `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+  created $adff cell `$procdff$1217' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_core.\result_o' using process `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+  created $adff cell `$procdff$1222' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_core.\mode_q' using process `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+  created $adff cell `$procdff$1227' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_core.\x0_q' using process `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+  created $adff cell `$procdff$1232' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_core.\x1_q' using process `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+  created $adff cell `$procdff$1237' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_core.\x2_q' using process `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+  created $adff cell `$procdff$1242' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_core.\x3_q' using process `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+  created $adff cell `$procdff$1247' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.\rk_o' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1252' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.\rk_valid_o' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1257' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.\state_q' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1262' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.\round_q' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1267' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.\k0_q' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1272' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.\k1_q' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1277' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.\k2_q' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1282' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.\k3_q' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1287' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.$bitselwrite$pos$../rtl/sm4_key_schedule.sv:111$13' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1292' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.$bitselwrite$pos$../rtl/sm4_key_schedule.sv:115$14' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1297' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.$bitselwrite$pos$../rtl/sm4_key_schedule.sv:119$15' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1302' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.$bitselwrite$pos$../rtl/sm4_key_schedule.sv:123$16' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1307' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.$lookahead\rk_o$62' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1312' with positive edge clock and positive level reset.
+
+6.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+6.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:98$proc$471'.
+Removing empty process `sm4_axis_ip.$../rtl/sm4_axis_ip.sv:98$proc$471'.
+Found and cleaned up 6 empty switches in `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+Removing empty process `sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+Found and cleaned up 9 empty switches in `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+Removing empty process `sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+Found and cleaned up 2 empty switches in `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:100$proc$394'.
+Removing empty process `sm4_axis_ip.$../rtl/sm4_axis_ip.sv:100$proc$394'.
+Found and cleaned up 8 empty switches in `\sm4_core.$../rtl/sm4_core.sv:66$proc$326'.
+Removing empty process `sm4_core.$../rtl/sm4_core.sv:66$proc$326'.
+Found and cleaned up 3 empty switches in `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+Removing empty process `sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+Found and cleaned up 6 empty switches in `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:66$proc$264'.
+Removing empty process `sm4_key_schedule.$../rtl/sm4_key_schedule.sv:66$proc$264'.
+Found and cleaned up 1 empty switch in `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:66$proc$259'.
+Removing empty process `sm4_key_schedule.$../rtl/sm4_key_schedule.sv:66$proc$259'.
+Found and cleaned up 6 empty switches in `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:65$proc$223'.
+Removing empty process `sm4_key_schedule.$../rtl/sm4_key_schedule.sv:65$proc$223'.
+Found and cleaned up 1 empty switch in `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:65$proc$218'.
+Removing empty process `sm4_key_schedule.$../rtl/sm4_key_schedule.sv:65$proc$218'.
+Found and cleaned up 6 empty switches in `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:64$proc$182'.
+Removing empty process `sm4_key_schedule.$../rtl/sm4_key_schedule.sv:64$proc$182'.
+Found and cleaned up 1 empty switch in `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:64$proc$177'.
+Removing empty process `sm4_key_schedule.$../rtl/sm4_key_schedule.sv:64$proc$177'.
+Found and cleaned up 6 empty switches in `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:63$proc$141'.
+Removing empty process `sm4_key_schedule.$../rtl/sm4_key_schedule.sv:63$proc$141'.
+Found and cleaned up 1 empty switch in `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:63$proc$136'.
+Removing empty process `sm4_key_schedule.$../rtl/sm4_key_schedule.sv:63$proc$136'.
+Found and cleaned up 4 empty switches in `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+Removing empty process `sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+Cleaned up 61 empty switches.
+
+6.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sm4_axis_ip.
+<suppressed ~111 debug messages>
+Optimizing module sm4_core.
+<suppressed ~34 debug messages>
+Optimizing module sm4_key_schedule.
+<suppressed ~65 debug messages>
+
+7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sm4_axis_ip..
+Finding unused cells or wires in module \sm4_core..
+Finding unused cells or wires in module \sm4_key_schedule..
+Removed 185 unused cells and 710 unused wires.
+<suppressed ~194 debug messages>
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sm4_axis_ip.
+Optimizing module sm4_core.
+<suppressed ~3 debug messages>
+Optimizing module sm4_key_schedule.
+<suppressed ~12 debug messages>
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sm4_axis_ip'.
+Computing hashes of 76 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+Computing hashes of 72 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+<suppressed ~12 debug messages>
+Finding identical cells in module `\sm4_core'.
+Computing hashes of 71 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+Computing hashes of 58 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+<suppressed ~39 debug messages>
+Finding identical cells in module `\sm4_key_schedule'.
+Computing hashes of 199 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 154 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 144 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 141 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 138 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 135 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+<suppressed ~192 debug messages>
+Removed a total of 81 cells.
+
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \sm4_axis_ip..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$589.
+    dead port 2/2 on $mux $procmux$583.
+    dead port 2/2 on $mux $procmux$577.
+Running muxtree optimizer on module \sm4_core..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \sm4_key_schedule..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$869.
+Removed 4 multiplexer ports.
+<suppressed ~122 debug messages>
+
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \sm4_axis_ip.
+  Optimizing cells in module \sm4_core.
+  Optimizing cells in module \sm4_key_schedule.
+    New ctrl vector for $pmux cell $procmux$896: { $procmux$949_CMP $auto$opt_reduce.cc:137:opt_pmux$1322 }
+    New ctrl vector for $pmux cell $procmux$917: $auto$opt_reduce.cc:137:opt_pmux$1324
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:131:opt_pmux$1321: { $procmux$962_CMP $procmux$942_CMP }
+  Optimizing cells in module \sm4_key_schedule.
+Performed a total of 3 changes.
+
+8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sm4_axis_ip'.
+Computing hashes of 69 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+Finding identical cells in module `\sm4_core'.
+Computing hashes of 58 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+Finding identical cells in module `\sm4_key_schedule'.
+Computing hashes of 136 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Removed a total of 0 cells.
+
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$1132 ($adff) from module sm4_axis_ip (D = \s_axis_tuser_i, Q = \in_user_q[1]).
+Adding EN signal on $procdff$1012 ($adff) from module sm4_axis_ip (D = $3$mem2reg_rd$\in_user_q$../rtl/sm4_axis_ip.sv:204$385_DATA[7:0]$469, Q = \active_user_q).
+Adding EN signal on $procdff$1007 ($adff) from module sm4_axis_ip (D = $3$mem2reg_rd$\in_dest_q$../rtl/sm4_axis_ip.sv:203$384_DATA[7:0]$468, Q = \active_dest_q).
+Adding EN signal on $procdff$1122 ($adff) from module sm4_axis_ip (D = \s_axis_tdest_i, Q = \in_dest_q[1]).
+Adding EN signal on $procdff$987 ($adff) from module sm4_axis_ip (D = \active_id_q, Q = \result_id_q).
+Adding EN signal on $procdff$1117 ($adff) from module sm4_axis_ip (D = \s_axis_tdest_i, Q = \in_dest_q[0]).
+Adding EN signal on $procdff$977 ($adff) from module sm4_axis_ip (D = \u_core_result_o, Q = \result_q).
+Adding EN signal on $procdff$1052 ($adff) from module sm4_axis_ip (D = $../rtl/sm4_axis_ip.sv:134$add$444_Y, Q = \in_rd_q).
+Adding EN signal on $procdff$1112 ($adff) from module sm4_axis_ip (D = \s_axis_tid_i, Q = \in_id_q[1]).
+Adding EN signal on $procdff$1107 ($adff) from module sm4_axis_ip (D = \s_axis_tid_i, Q = \in_id_q[0]).
+Adding EN signal on $procdff$992 ($adff) from module sm4_axis_ip (D = \active_dest_q, Q = \result_dest_q).
+Adding EN signal on $procdff$1072 ($adff) from module sm4_axis_ip (D = \s_axis_tdata_i, Q = \in_data_q[1]).
+Adding EN signal on $procdff$1127 ($adff) from module sm4_axis_ip (D = \s_axis_tuser_i, Q = \in_user_q[0]).
+Adding EN signal on $procdff$997 ($adff) from module sm4_axis_ip (D = \active_user_q, Q = \result_user_q).
+Adding EN signal on $procdff$1067 ($adff) from module sm4_axis_ip (D = \s_axis_tdata_i, Q = \in_data_q[0]).
+Adding EN signal on $procdff$982 ($adff) from module sm4_axis_ip (D = $0\result_valid_q[0:0], Q = \result_valid_q).
+Adding EN signal on $procdff$1002 ($adff) from module sm4_axis_ip (D = $3$mem2reg_rd$\in_id_q$../rtl/sm4_axis_ip.sv:202$383_DATA[7:0]$467, Q = \active_id_q).
+Adding EN signal on $procdff$1047 ($adff) from module sm4_axis_ip (D = $../rtl/sm4_axis_ip.sv:131$add$443_Y, Q = \in_wr_q).
+Adding EN signal on $procdff$1212 ($adff) from module sm4_core (D = $0\round_q[4:0], Q = \round_q).
+Adding EN signal on $procdff$1237 ($adff) from module sm4_core (D = $0\x1_q[31:0], Q = \x1_q).
+Adding EN signal on $procdff$1232 ($adff) from module sm4_core (D = $0\x0_q[31:0], Q = \x0_q).
+Adding EN signal on $procdff$1222 ($adff) from module sm4_core (D = { \xnew_c \x3_q \x2_q \x1_q }, Q = \result_o).
+Adding EN signal on $procdff$1207 ($adff) from module sm4_core (D = $0\state_q[1:0], Q = \state_q).
+Adding EN signal on $procdff$1242 ($adff) from module sm4_core (D = $0\x2_q[31:0], Q = \x2_q).
+Adding EN signal on $procdff$1247 ($adff) from module sm4_core (D = $0\x3_q[31:0], Q = \x3_q).
+Adding EN signal on $procdff$1227 ($adff) from module sm4_core (D = \mode_i, Q = \mode_q).
+Adding EN signal on $procdff$1257 ($adff) from module sm4_key_schedule (D = $0\rk_valid_o[0:0], Q = \rk_valid_o).
+Adding EN signal on $procdff$1252 ($adff) from module sm4_key_schedule (D = $0$lookahead\rk_o$62[1023:0]$68, Q = \rk_o).
+Adding EN signal on $procdff$1287 ($adff) from module sm4_key_schedule (D = $0\k3_q[31:0], Q = \k3_q).
+Adding EN signal on $procdff$1262 ($adff) from module sm4_key_schedule (D = $0\state_q[1:0], Q = \state_q).
+Adding EN signal on $procdff$1272 ($adff) from module sm4_key_schedule (D = $0\k0_q[31:0], Q = \k0_q).
+Adding EN signal on $procdff$1282 ($adff) from module sm4_key_schedule (D = $0\k2_q[31:0], Q = \k2_q).
+Adding EN signal on $procdff$1277 ($adff) from module sm4_key_schedule (D = $0\k1_q[31:0], Q = \k1_q).
+Adding EN signal on $procdff$1267 ($adff) from module sm4_key_schedule (D = $0\round_q[4:0], Q = \round_q).
+
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sm4_axis_ip..
+Finding unused cells or wires in module \sm4_core..
+Finding unused cells or wires in module \sm4_key_schedule..
+Removed 29 unused cells and 113 unused wires.
+<suppressed ~34 debug messages>
+
+8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sm4_axis_ip.
+<suppressed ~1 debug messages>
+Optimizing module sm4_core.
+<suppressed ~5 debug messages>
+Optimizing module sm4_key_schedule.
+<suppressed ~9 debug messages>
+
+8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \sm4_axis_ip..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \sm4_core..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \sm4_key_schedule..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~73 debug messages>
+
+8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \sm4_axis_ip.
+  Optimizing cells in module \sm4_core.
+  Optimizing cells in module \sm4_key_schedule.
+    New ctrl vector for $pmux cell $procmux$896: $procmux$870_CMP
+  Optimizing cells in module \sm4_key_schedule.
+Performed a total of 1 changes.
+
+8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sm4_axis_ip'.
+Computing hashes of 57 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+Computing hashes of 51 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+Computing hashes of 48 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+<suppressed ~27 debug messages>
+Finding identical cells in module `\sm4_core'.
+Computing hashes of 73 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+Computing hashes of 64 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+Computing hashes of 60 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+<suppressed ~39 debug messages>
+Finding identical cells in module `\sm4_key_schedule'.
+Computing hashes of 163 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 151 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+<suppressed ~36 debug messages>
+Removed a total of 34 cells.
+
+8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sm4_axis_ip..
+Finding unused cells or wires in module \sm4_core..
+Finding unused cells or wires in module \sm4_key_schedule..
+Removed 1 unused cells and 35 unused wires.
+<suppressed ~4 debug messages>
+
+8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sm4_axis_ip.
+Optimizing module sm4_core.
+Optimizing module sm4_key_schedule.
+
+8.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \sm4_axis_ip..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \sm4_core..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \sm4_key_schedule..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~73 debug messages>
+
+8.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \sm4_axis_ip.
+  Optimizing cells in module \sm4_core.
+  Optimizing cells in module \sm4_key_schedule.
+Performed a total of 0 changes.
+
+8.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sm4_axis_ip'.
+Computing hashes of 48 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+Finding identical cells in module `\sm4_core'.
+Computing hashes of 60 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+Finding identical cells in module `\sm4_key_schedule'.
+Computing hashes of 150 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Removed a total of 0 cells.
+
+8.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sm4_axis_ip..
+Finding unused cells or wires in module \sm4_core..
+Finding unused cells or wires in module \sm4_key_schedule..
+
+8.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sm4_axis_ip.
+Optimizing module sm4_core.
+Optimizing module sm4_key_schedule.
+
+8.23. Finished fast OPT passes. (There is nothing left to do.)
+
+9. Executing FSM pass (extract and optimize FSM).
+
+9.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+9.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+9.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+9.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sm4_axis_ip..
+Finding unused cells or wires in module \sm4_core..
+Finding unused cells or wires in module \sm4_key_schedule..
+
+9.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+9.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+9.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+9.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+10. Executing OPT pass (performing simple optimizations).
+
+10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sm4_axis_ip.
+Optimizing module sm4_core.
+Optimizing module sm4_key_schedule.
+
+10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sm4_axis_ip'.
+Computing hashes of 48 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+Finding identical cells in module `\sm4_core'.
+Computing hashes of 60 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+Finding identical cells in module `\sm4_key_schedule'.
+Computing hashes of 150 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Removed a total of 0 cells.
+
+10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \sm4_axis_ip..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \sm4_core..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \sm4_key_schedule..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~73 debug messages>
+
+10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \sm4_axis_ip.
+  Optimizing cells in module \sm4_core.
+  Optimizing cells in module \sm4_key_schedule.
+Performed a total of 0 changes.
+
+10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sm4_axis_ip'.
+Computing hashes of 48 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+Finding identical cells in module `\sm4_core'.
+Computing hashes of 60 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+Finding identical cells in module `\sm4_key_schedule'.
+Computing hashes of 150 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Removed a total of 0 cells.
+
+10.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sm4_axis_ip..
+Finding unused cells or wires in module \sm4_core..
+Finding unused cells or wires in module \sm4_key_schedule..
+
+10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sm4_axis_ip.
+Optimizing module sm4_core.
+Optimizing module sm4_key_schedule.
+
+10.9. Finished fast OPT passes. (There is nothing left to do.)
+
+11. Executing TECHMAP pass (map to technology primitives).
+
+11.1. Executing Verilog-2005 frontend: /share/techmap.v
+Parsing Verilog input from `/share/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+11.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod$constmap:020e44ac191f6e6e41fe6e803496d034566a4591$paramod$8a944f962e927e7ff3963aac0d0e9e30789844de\_90_shift_shiftx for cells of type $shift.
+Using extmapper simplemap for cells of type $or.
+Analyzing pattern of constant bits for this cell:
+  Constant input on bit 0 of port A: 1'1
+  Constant input on bit 1 of port A: 1'1
+  Constant input on bit 2 of port A: 1'1
+  Constant input on bit 3 of port A: 1'1
+  Constant input on bit 4 of port A: 1'1
+  Constant input on bit 5 of port A: 1'1
+  Constant input on bit 6 of port A: 1'1
+  Constant input on bit 7 of port A: 1'1
+  Constant input on bit 8 of port A: 1'1
+  Constant input on bit 9 of port A: 1'1
+  Constant input on bit 10 of port A: 1'1
+  Constant input on bit 11 of port A: 1'1
+  Constant input on bit 12 of port A: 1'1
+  Constant input on bit 13 of port A: 1'1
+  Constant input on bit 14 of port A: 1'1
+  Constant input on bit 15 of port A: 1'1
+  Constant input on bit 16 of port A: 1'1
+  Constant input on bit 17 of port A: 1'1
+  Constant input on bit 18 of port A: 1'1
+  Constant input on bit 19 of port A: 1'1
+  Constant input on bit 20 of port A: 1'1
+  Constant input on bit 21 of port A: 1'1
+  Constant input on bit 22 of port A: 1'1
+  Constant input on bit 23 of port A: 1'1
+  Constant input on bit 24 of port A: 1'1
+  Constant input on bit 25 of port A: 1'1
+  Constant input on bit 26 of port A: 1'1
+  Constant input on bit 27 of port A: 1'1
+  Constant input on bit 28 of port A: 1'1
+  Constant input on bit 29 of port A: 1'1
+  Constant input on bit 30 of port A: 1'1
+  Constant input on bit 31 of port A: 1'1
+Creating constmapped module `$paramod$constmap:a373ee77d4fc1f81409bb6a7741a41b23e142803$paramod$8a944f962e927e7ff3963aac0d0e9e30789844de\_90_shift_shiftx'.
+
+11.8. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$constmap:a373ee77d4fc1f81409bb6a7741a41b23e142803$paramod$8a944f962e927e7ff3963aac0d0e9e30789844de\_90_shift_shiftx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$1703.
+    dead port 2/2 on $mux $procmux$1697.
+    dead port 2/2 on $mux $procmux$1691.
+    dead port 2/2 on $mux $procmux$1685.
+    dead port 2/2 on $mux $procmux$1679.
+    dead port 2/2 on $mux $procmux$1673.
+    dead port 2/2 on $mux $procmux$1667.
+    dead port 2/2 on $mux $procmux$1661.
+    dead port 2/2 on $mux $procmux$1655.
+    dead port 2/2 on $mux $procmux$1649.
+    dead port 2/2 on $mux $procmux$1643.
+Removed 11 multiplexer ports.
+<suppressed ~1021 debug messages>
+
+11.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$constmap:a373ee77d4fc1f81409bb6a7741a41b23e142803$paramod$8a944f962e927e7ff3963aac0d0e9e30789844de\_90_shift_shiftx.
+<suppressed ~23 debug messages>
+Removed 0 unused cells and 16 unused wires.
+Using template $paramod$constmap:a373ee77d4fc1f81409bb6a7741a41b23e142803$paramod$8a944f962e927e7ff3963aac0d0e9e30789844de\_90_shift_shiftx for cells of type $shift.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $and.
+Running "alumacc" on wrapper $extern:wrap:$neg:Y_WIDTH=33:A_WIDTH=33:A_SIGNED=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$neg:Y_WIDTH=33:A_WIDTH=33:A_SIGNED=1:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$neg:Y_WIDTH=33:A_WIDTH=33:A_SIGNED=1:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$add:Y_WIDTH=5:B_WIDTH=5:A_WIDTH=5:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:Y_WIDTH=5:B_WIDTH=5:A_WIDTH=5:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:Y_WIDTH=5:B_WIDTH=5:A_WIDTH=5:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $pmux.
+Using extmapper simplemap for cells of type $logic_not.
+Using template $paramod$e3e2a2ae1e4d598b5e0e0be67cc1104653ecf8c1\_90_alu for cells of type $alu.
+Using template $paramod$b18e16801adf491a64caa0542270798e5d4ac6b6\_90_alu for cells of type $alu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000100001 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000100001 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000101 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000101 for cells of type $lcu.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=5:B_WIDTH=5:A_WIDTH=5:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=5:B_WIDTH=5:A_WIDTH=5:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=5:B_WIDTH=5:A_WIDTH=5:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $paramod$constmap:8c7299fdd45e0b7a2ea8591907100d3d3ae97604$paramod$487b14238d968da226e847bdf07ca83aee32346a\_90_shift_shiftx for cells of type $shiftx.
+Using extmapper simplemap for cells of type $adff.
+Running "alumacc" on wrapper $extern:wrap:$lt:Y_WIDTH=1:B_WIDTH=2:A_WIDTH=2:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$lt:Y_WIDTH=1:B_WIDTH=2:A_WIDTH=2:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$lt:Y_WIDTH=1:B_WIDTH=2:A_WIDTH=2:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$add:Y_WIDTH=2:B_WIDTH=2:A_WIDTH=2:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:Y_WIDTH=2:B_WIDTH=2:A_WIDTH=2:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:Y_WIDTH=2:B_WIDTH=2:A_WIDTH=2:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=2:B_WIDTH=2:A_WIDTH=2:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=2:B_WIDTH=2:A_WIDTH=2:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=2:B_WIDTH=2:A_WIDTH=2:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Running "alumacc" on wrapper $extern:wrap:$add:Y_WIDTH=1:B_WIDTH=1:A_WIDTH=1:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:Y_WIDTH=1:B_WIDTH=1:A_WIDTH=1:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:Y_WIDTH=1:B_WIDTH=1:A_WIDTH=1:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $paramod$7e708ae28ab761f11d0fb59d3ffc72f6a4baf5d9\_90_alu for cells of type $alu.
+Using template $paramod$fc972a7a46956c1788f3cb5257b53c8f1df2d0cc\_90_alu for cells of type $alu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000010 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000010 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000001 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000001 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~1820 debug messages>
+
+12. Executing OPT pass (performing simple optimizations).
+
+12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sm4_axis_ip.
+<suppressed ~237 debug messages>
+Optimizing module sm4_core.
+<suppressed ~10477 debug messages>
+Optimizing module sm4_key_schedule.
+<suppressed ~190777 debug messages>
+
+12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sm4_axis_ip'.
+Computing hashes of 976 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+Computing hashes of 972 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+<suppressed ~12 debug messages>
+Finding identical cells in module `\sm4_core'.
+Computing hashes of 6389 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+Computing hashes of 6365 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+Computing hashes of 6360 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+<suppressed ~87 debug messages>
+Finding identical cells in module `\sm4_key_schedule'.
+Computing hashes of 38178 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 38009 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 37914 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 37816 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 37657 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 37374 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 36843 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 35816 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 33797 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 32801 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 32797 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 32793 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 32789 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 32785 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 32781 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 32777 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 32773 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 32769 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 32765 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 32761 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 32757 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 32753 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+<suppressed ~16275 debug messages>
+Removed a total of 5458 cells.
+
+12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \sm4_axis_ip..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \sm4_core..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \sm4_key_schedule..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \sm4_axis_ip.
+  Optimizing cells in module \sm4_core.
+  Optimizing cells in module \sm4_key_schedule.
+Performed a total of 0 changes.
+
+12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sm4_axis_ip'.
+Computing hashes of 972 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+Finding identical cells in module `\sm4_core'.
+Computing hashes of 6360 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+Finding identical cells in module `\sm4_key_schedule'.
+Computing hashes of 32753 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Removed a total of 0 cells.
+
+12.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sm4_axis_ip..
+Finding unused cells or wires in module \sm4_core..
+Finding unused cells or wires in module \sm4_key_schedule..
+Removed 8521 unused cells and 1240 unused wires.
+<suppressed ~8524 debug messages>
+
+12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sm4_axis_ip.
+Optimizing module sm4_core.
+Optimizing module sm4_key_schedule.
+<suppressed ~151 debug messages>
+
+12.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+12.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \sm4_axis_ip..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \sm4_core..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \sm4_key_schedule..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+12.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \sm4_axis_ip.
+  Optimizing cells in module \sm4_core.
+  Optimizing cells in module \sm4_key_schedule.
+Performed a total of 0 changes.
+
+12.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sm4_axis_ip'.
+Computing hashes of 969 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+Finding identical cells in module `\sm4_core'.
+Computing hashes of 2229 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+Finding identical cells in module `\sm4_key_schedule'.
+Computing hashes of 28215 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 28214 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+12.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sm4_axis_ip..
+Finding unused cells or wires in module \sm4_core..
+Finding unused cells or wires in module \sm4_key_schedule..
+Removed 0 unused cells and 27 unused wires.
+<suppressed ~1 debug messages>
+
+12.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sm4_axis_ip.
+Optimizing module sm4_core.
+Optimizing module sm4_key_schedule.
+
+12.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+12.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \sm4_axis_ip..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \sm4_core..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \sm4_key_schedule..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+12.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \sm4_axis_ip.
+  Optimizing cells in module \sm4_core.
+  Optimizing cells in module \sm4_key_schedule.
+Performed a total of 0 changes.
+
+12.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sm4_axis_ip'.
+Computing hashes of 969 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+Finding identical cells in module `\sm4_core'.
+Computing hashes of 2229 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+Finding identical cells in module `\sm4_key_schedule'.
+Computing hashes of 28214 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Removed a total of 0 cells.
+
+12.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+12.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sm4_axis_ip..
+Finding unused cells or wires in module \sm4_core..
+Finding unused cells or wires in module \sm4_key_schedule..
+
+12.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sm4_axis_ip.
+Optimizing module sm4_core.
+Optimizing module sm4_key_schedule.
+
+12.23. Finished fast OPT passes. (There is nothing left to do.)
+
+13. Printing statistics.
+
+=== sm4_axis_ip ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      378 wires
+     2631 wire bits
+       53 public wires
+     2280 public wire bits
+       24 ports
+      507 port bits
+      967 cells
+      312   $_AND_
+      483   $_DFFE_PN0P_
+        2   $_DFF_PN0_
+        6   $_MUX_
+        8   $_NOT_
+      154   $_OR_
+        2   $_XOR_
+        2 submodules
+        1   sm4_core
+        1   sm4_key_schedule
+
+=== sm4_core ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      482 wires
+    15015 wire bits
+       32 public wires
+     1780 public wire bits
+       10 ports
+     1287 port bits
+        4 memories
+     8192 memory bits
+     2229 cells
+      275   $_AND_
+      264   $_DFFE_PN0P_
+        1   $_DFF_PN0_
+     1265   $_MUX_
+        9   $_NOT_
+      146   $_OR_
+      261   $_XOR_
+        4   $meminit
+        4   $memrd_v2
+
+=== sm4_key_schedule ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     5727 wires
+   111917 wire bits
+       62 public wires
+     2476 public wire bits
+        7 ports
+     1157 port bits
+       20 memories
+    36864 memory bits
+    28214 cells
+     4379   $_AND_
+     1024   $_DFFE_PN0N_
+      136   $_DFFE_PN0P_
+    15437   $_MUX_
+      114   $_NOT_
+     6308   $_OR_
+      776   $_XOR_
+       20   $meminit
+       20   $memrd_v2
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+    31410 sm4_axis_ip
+     2229 sm4_core
+    28214 sm4_key_schedule
+
+        +----------Count including submodules.
+        | 
+     6587 wires
+   129563 wire bits
+      147 public wires
+     6536 public wire bits
+       41 ports
+     2951 port bits
+       24 memories
+    45056 memory bits
+        - processes
+    31410 cells
+     4966   $_AND_
+     1024   $_DFFE_PN0N_
+      883   $_DFFE_PN0P_
+        3   $_DFF_PN0_
+    16708   $_MUX_
+      131   $_NOT_
+     6608   $_OR_
+     1039   $_XOR_
+       24   $meminit
+       24   $memrd_v2
+        2 submodules
+        1   sm4_core
+        1   sm4_key_schedule
+
+Warnings: 7 unique messages, 7 total
+End of script. Logfile hash: 83ceaed1f7, time: 11.56s, user: 11.56s, system: 0.00s
+Yosys 0.71 (git sha1 b4c586fd3, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)
+Time spent: 39% 24x opt_expr (4 sec), 11% 1x techmap (1 sec), ...
+---------------------------------------------------------------------
+SYNTHESIS SUCCESSFUL: Yosys, top module sm4_axis_ip
+0 errors

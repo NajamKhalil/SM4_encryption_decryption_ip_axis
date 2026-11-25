@@ -1,0 +1,13 @@
+read_verilog -sv ../rtl/sm4_pkg.sv
+read_verilog -sv ../rtl/sm4_key_schedule.sv
+read_verilog -sv ../rtl/sm4_core.sv
+read_verilog -sv ../rtl/sm4_axis_ip.sv
+hierarchy -check -top sm4_axis_ip
+proc
+opt_clean
+opt
+fsm
+opt
+techmap
+opt
+stat
