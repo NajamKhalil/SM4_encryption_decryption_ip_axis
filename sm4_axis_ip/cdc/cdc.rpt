@@ -1,0 +1,7 @@
+CDC STRUCTURAL REVIEW - sm4_axis_ip
+Method: scan every always_ff event control in rtl/*.sv.
+Clocks found: axi_st_clk
+Asynchronous resets found: axi_st_areset_n
+Result: single-clock design; no asynchronous boundary to cross.
+Synchronizers required: none.
+0 violations
