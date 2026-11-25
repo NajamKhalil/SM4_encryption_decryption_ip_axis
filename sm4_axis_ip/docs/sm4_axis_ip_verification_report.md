@@ -35,6 +35,21 @@ The bench includes the published vector with key and plaintext
 key returns the original plaintext. Random traffic, slave stalls and master
 backpressure were layered on top of those directed checks.
 
+### 2.1 Case results
+
+| ID | Result | Evidence |
+|----|--------|----------|
+| TC-01 | PASS | Known-answer ciphertext compared with the published constant |
+| TC-02 | PASS | Published ciphertext decrypts to the original plaintext |
+| TC-03 | PASS | Random encrypt blocks with staggered slave offers |
+| TC-04 | PASS | Random decrypt blocks with pseudo-random master `TREADY` |
+| TC-05 | PASS | Key reload with `TID`, `TDEST` and `TUSER` replay |
+| TC-06 | PASS | Second key reload changes the cipher output |
+| TC-07 | PASS | Skid buffer accepts offers while the engine is busy |
+| TC-08 | PASS | Registered output data stays stable while `TREADY` is low |
+| TC-09 | PASS | Recovery after reset with a fresh key and known answer |
+| TC-10 | PASS | Final match counter equals beat counter with zero mismatches |
+
 ## 3. Algorithm cross-check
 
 The 256 S-box entries in the package were compared byte for byte with the
