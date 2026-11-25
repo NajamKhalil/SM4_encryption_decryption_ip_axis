@@ -18,6 +18,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+`timescale 1ns/1ps
 `default_nettype none
 
 module sm4_core
@@ -130,7 +131,7 @@ module sm4_core
   // ==========================================================================
 
 `ifdef RTL_SIM
-  always_ff @(posedge clk) begin
+  always @(posedge clk) begin
     if (start_i && !rk_valid_i) begin
       $error("sm4_core: start_i asserted without valid round keys");
     end

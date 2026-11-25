@@ -21,6 +21,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+`timescale 1ns/1ps
 `default_nettype none
 
 module sm4_axis_ip
@@ -243,7 +244,7 @@ module sm4_axis_ip
   // ==========================================================================
 
 `ifdef RTL_SIM
-  always_ff @(posedge axi_st_clk) begin
+  always @(posedge axi_st_clk) begin
     if (push_s) begin
       if ($isunknown(s_axis_tdata_i) || $isunknown(s_axis_tkeep_i) ||
           $isunknown(s_axis_tstrb_i)) begin

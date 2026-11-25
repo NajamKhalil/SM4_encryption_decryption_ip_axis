@@ -19,6 +19,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+`timescale 1ns/1ps
 `default_nettype none
 
 module sm4_key_schedule
@@ -153,7 +154,7 @@ module sm4_key_schedule
   // ==========================================================================
 
 `ifdef RTL_SIM
-  always_ff @(posedge clk) begin
+  always @(posedge clk) begin
     if (key_valid_i && key_ready_o && $isunknown(key_i)) begin
       $error("sm4_key_schedule: X on key_i while handshake fires");
     end
