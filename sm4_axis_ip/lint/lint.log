@@ -1,0 +1,2173 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.71 (git sha1 b4c586fd3, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)
+
+-- Running command `read_verilog -sv ../rtl/sm4_pkg.sv; read_verilog -sv ../rtl/sm4_key_schedule.sv; read_verilog -sv ../rtl/sm4_core.sv; read_verilog -sv ../rtl/sm4_axis_ip.sv; hierarchy -check -top sm4_axis_ip; proc; opt; check -assert; stat' --
+
+1. Executing Verilog-2005 frontend: ../rtl/sm4_pkg.sv
+Parsing SystemVerilog input from `../rtl/sm4_pkg.sv' to AST representation.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: ../rtl/sm4_key_schedule.sv
+Parsing SystemVerilog input from `../rtl/sm4_key_schedule.sv' to AST representation.
+Generating RTLIL representation for module `\sm4_key_schedule'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: ../rtl/sm4_core.sv
+Parsing SystemVerilog input from `../rtl/sm4_core.sv' to AST representation.
+Generating RTLIL representation for module `\sm4_core'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: ../rtl/sm4_axis_ip.sv
+Parsing SystemVerilog input from `../rtl/sm4_axis_ip.sv' to AST representation.
+Generating RTLIL representation for module `\sm4_axis_ip'.
+Warning: Replacing memory \in_user_q with list of registers. See ../rtl/sm4_axis_ip.sv:118
+Warning: Replacing memory \in_dest_q with list of registers. See ../rtl/sm4_axis_ip.sv:117
+Warning: Replacing memory \in_id_q with list of registers. See ../rtl/sm4_axis_ip.sv:116
+Warning: Replacing memory \in_last_q with list of registers. See ../rtl/sm4_axis_ip.sv:115
+Warning: Replacing memory \in_strb_q with list of registers. See ../rtl/sm4_axis_ip.sv:114
+Warning: Replacing memory \in_keep_q with list of registers. See ../rtl/sm4_axis_ip.sv:113
+Warning: Replacing memory \in_data_q with list of registers. See ../rtl/sm4_axis_ip.sv:112
+Successfully finished Verilog frontend.
+
+5. Executing HIERARCHY pass (managing design hierarchy).
+
+5.1. Analyzing design hierarchy..
+Top module:  \sm4_axis_ip
+Used module:     \sm4_core
+Used module:     \sm4_key_schedule
+
+5.2. Analyzing design hierarchy..
+Top module:  \sm4_axis_ip
+Used module:     \sm4_core
+Used module:     \sm4_key_schedule
+Removed 0 unused modules.
+
+6. Executing PROC pass (convert processes to netlists).
+
+6.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+6.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 1 dead cases from process $../rtl/sm4_axis_ip.sv:98$proc$471 in module sm4_axis_ip.
+Marked 1 switch rules as full_case in process $../rtl/sm4_axis_ip.sv:98$proc$471 in module sm4_axis_ip.
+Removed 3 dead cases from process $../rtl/sm4_axis_ip.sv:189$proc$447 in module sm4_axis_ip.
+Marked 6 switch rules as full_case in process $../rtl/sm4_axis_ip.sv:189$proc$447 in module sm4_axis_ip.
+Marked 9 switch rules as full_case in process $../rtl/sm4_axis_ip.sv:106$proc$397 in module sm4_axis_ip.
+Marked 2 switch rules as full_case in process $../rtl/sm4_axis_ip.sv:100$proc$394 in module sm4_axis_ip.
+Removed 4 dead cases from process $../rtl/sm4_core.sv:66$proc$326 in module sm4_core.
+Marked 8 switch rules as full_case in process $../rtl/sm4_core.sv:66$proc$326 in module sm4_core.
+Marked 2 switch rules as full_case in process $../rtl/sm4_core.sv:74$proc$321 in module sm4_core.
+Removed 4 dead cases from process $../rtl/sm4_key_schedule.sv:66$proc$264 in module sm4_key_schedule.
+Marked 6 switch rules as full_case in process $../rtl/sm4_key_schedule.sv:66$proc$264 in module sm4_key_schedule.
+Removed 1 dead cases from process $../rtl/sm4_key_schedule.sv:66$proc$259 in module sm4_key_schedule.
+Marked 1 switch rules as full_case in process $../rtl/sm4_key_schedule.sv:66$proc$259 in module sm4_key_schedule.
+Removed 4 dead cases from process $../rtl/sm4_key_schedule.sv:65$proc$223 in module sm4_key_schedule.
+Marked 6 switch rules as full_case in process $../rtl/sm4_key_schedule.sv:65$proc$223 in module sm4_key_schedule.
+Removed 1 dead cases from process $../rtl/sm4_key_schedule.sv:65$proc$218 in module sm4_key_schedule.
+Marked 1 switch rules as full_case in process $../rtl/sm4_key_schedule.sv:65$proc$218 in module sm4_key_schedule.
+Removed 4 dead cases from process $../rtl/sm4_key_schedule.sv:64$proc$182 in module sm4_key_schedule.
+Marked 6 switch rules as full_case in process $../rtl/sm4_key_schedule.sv:64$proc$182 in module sm4_key_schedule.
+Removed 1 dead cases from process $../rtl/sm4_key_schedule.sv:64$proc$177 in module sm4_key_schedule.
+Marked 1 switch rules as full_case in process $../rtl/sm4_key_schedule.sv:64$proc$177 in module sm4_key_schedule.
+Removed 4 dead cases from process $../rtl/sm4_key_schedule.sv:63$proc$141 in module sm4_key_schedule.
+Marked 6 switch rules as full_case in process $../rtl/sm4_key_schedule.sv:63$proc$141 in module sm4_key_schedule.
+Removed 1 dead cases from process $../rtl/sm4_key_schedule.sv:63$proc$136 in module sm4_key_schedule.
+Marked 1 switch rules as full_case in process $../rtl/sm4_key_schedule.sv:63$proc$136 in module sm4_key_schedule.
+Removed 1 dead cases from process $../rtl/sm4_key_schedule.sv:76$proc$63 in module sm4_key_schedule.
+Marked 3 switch rules as full_case in process $../rtl/sm4_key_schedule.sv:76$proc$63 in module sm4_key_schedule.
+Removed a total of 29 dead cases.
+
+6.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 135 assignments to connections.
+
+6.4. Executing PROC_INIT pass (extract init attributes).
+
+6.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \axi_st_areset_n in `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+Found async reset \axi_st_areset_n in `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+Found async reset \arst_n in `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+Found async reset \arst_n in `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+
+6.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 24 switches.
+<suppressed ~37 debug messages>
+
+6.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:98$proc$471'.
+     1/1: $1$mem2reg_rd$\in_data_q$../rtl/sm4_axis_ip.sv:98$375_DATA[127:0]$473
+Creating decoders for process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+     1/23: $3$mem2reg_rd$\in_user_q$../rtl/sm4_axis_ip.sv:204$385_DATA[7:0]$469
+     2/23: $3$mem2reg_rd$\in_dest_q$../rtl/sm4_axis_ip.sv:203$384_DATA[7:0]$468
+     3/23: $3$mem2reg_rd$\in_id_q$../rtl/sm4_axis_ip.sv:202$383_DATA[7:0]$467
+     4/23: $2$mem2reg_rd$\in_user_q$../rtl/sm4_axis_ip.sv:204$385_DATA[7:0]$466
+     5/23: $2$mem2reg_rd$\in_user_q$../rtl/sm4_axis_ip.sv:204$385_ADDR[0:0]$465
+     6/23: $2$mem2reg_rd$\in_dest_q$../rtl/sm4_axis_ip.sv:203$384_DATA[7:0]$464
+     7/23: $2$mem2reg_rd$\in_dest_q$../rtl/sm4_axis_ip.sv:203$384_ADDR[0:0]$463
+     8/23: $2$mem2reg_rd$\in_id_q$../rtl/sm4_axis_ip.sv:202$383_DATA[7:0]$462
+     9/23: $2$mem2reg_rd$\in_id_q$../rtl/sm4_axis_ip.sv:202$383_ADDR[0:0]$461
+    10/23: $1$mem2reg_rd$\in_user_q$../rtl/sm4_axis_ip.sv:204$385_DATA[7:0]$460
+    11/23: $1$mem2reg_rd$\in_user_q$../rtl/sm4_axis_ip.sv:204$385_ADDR[0:0]$459
+    12/23: $1$mem2reg_rd$\in_dest_q$../rtl/sm4_axis_ip.sv:203$384_DATA[7:0]$458
+    13/23: $1$mem2reg_rd$\in_dest_q$../rtl/sm4_axis_ip.sv:203$384_ADDR[0:0]$457
+    14/23: $1$mem2reg_rd$\in_id_q$../rtl/sm4_axis_ip.sv:202$383_DATA[7:0]$456
+    15/23: $1$mem2reg_rd$\in_id_q$../rtl/sm4_axis_ip.sv:202$383_ADDR[0:0]$455
+    16/23: $0\active_user_q[7:0]
+    17/23: $0\active_dest_q[7:0]
+    18/23: $0\active_id_q[7:0]
+    19/23: $0\result_user_q[7:0]
+    20/23: $0\result_dest_q[7:0]
+    21/23: $0\result_id_q[7:0]
+    22/23: $0\result_valid_q[0:0]
+    23/23: $0\result_q[127:0]
+Creating decoders for process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+     1/46: $2$mem2reg_wr$\in_user_q$../rtl/sm4_axis_ip.sv:130$382_ADDR[0:0]$441
+     2/46: $2$mem2reg_wr$\in_user_q$../rtl/sm4_axis_ip.sv:130$382_DATA[7:0]$442
+     3/46: $2$mem2reg_wr$\in_dest_q$../rtl/sm4_axis_ip.sv:129$381_ADDR[0:0]$439
+     4/46: $2$mem2reg_wr$\in_dest_q$../rtl/sm4_axis_ip.sv:129$381_DATA[7:0]$440
+     5/46: $2$mem2reg_wr$\in_id_q$../rtl/sm4_axis_ip.sv:128$380_ADDR[0:0]$437
+     6/46: $2$mem2reg_wr$\in_id_q$../rtl/sm4_axis_ip.sv:128$380_DATA[7:0]$438
+     7/46: $2$mem2reg_wr$\in_last_q$../rtl/sm4_axis_ip.sv:127$379_ADDR[0:0]$435
+     8/46: $2$mem2reg_wr$\in_last_q$../rtl/sm4_axis_ip.sv:127$379_DATA[0:0]$436
+     9/46: $2$mem2reg_wr$\in_strb_q$../rtl/sm4_axis_ip.sv:126$378_ADDR[0:0]$433
+    10/46: $2$mem2reg_wr$\in_strb_q$../rtl/sm4_axis_ip.sv:126$378_DATA[15:0]$434
+    11/46: $2$mem2reg_wr$\in_keep_q$../rtl/sm4_axis_ip.sv:125$377_ADDR[0:0]$431
+    12/46: $2$mem2reg_wr$\in_keep_q$../rtl/sm4_axis_ip.sv:125$377_DATA[15:0]$432
+    13/46: $2$mem2reg_wr$\in_data_q$../rtl/sm4_axis_ip.sv:124$376_ADDR[0:0]$429
+    14/46: $2$mem2reg_wr$\in_data_q$../rtl/sm4_axis_ip.sv:124$376_DATA[127:0]$430
+    15/46: $1$mem2reg_wr$\in_user_q$../rtl/sm4_axis_ip.sv:130$382_DATA[7:0]$428
+    16/46: $1$mem2reg_wr$\in_user_q$../rtl/sm4_axis_ip.sv:130$382_ADDR[0:0]$427
+    17/46: $1$mem2reg_wr$\in_dest_q$../rtl/sm4_axis_ip.sv:129$381_DATA[7:0]$426
+    18/46: $1$mem2reg_wr$\in_dest_q$../rtl/sm4_axis_ip.sv:129$381_ADDR[0:0]$425
+    19/46: $1$mem2reg_wr$\in_id_q$../rtl/sm4_axis_ip.sv:128$380_DATA[7:0]$424
+    20/46: $1$mem2reg_wr$\in_id_q$../rtl/sm4_axis_ip.sv:128$380_ADDR[0:0]$423
+    21/46: $1$mem2reg_wr$\in_last_q$../rtl/sm4_axis_ip.sv:127$379_DATA[0:0]$422
+    22/46: $1$mem2reg_wr$\in_last_q$../rtl/sm4_axis_ip.sv:127$379_ADDR[0:0]$421
+    23/46: $1$mem2reg_wr$\in_strb_q$../rtl/sm4_axis_ip.sv:126$378_DATA[15:0]$420
+    24/46: $1$mem2reg_wr$\in_strb_q$../rtl/sm4_axis_ip.sv:126$378_ADDR[0:0]$419
+    25/46: $1$mem2reg_wr$\in_keep_q$../rtl/sm4_axis_ip.sv:125$377_DATA[15:0]$418
+    26/46: $1$mem2reg_wr$\in_keep_q$../rtl/sm4_axis_ip.sv:125$377_ADDR[0:0]$417
+    27/46: $1$mem2reg_wr$\in_data_q$../rtl/sm4_axis_ip.sv:124$376_DATA[127:0]$416
+    28/46: $1$mem2reg_wr$\in_data_q$../rtl/sm4_axis_ip.sv:124$376_ADDR[0:0]$415
+    29/46: $0\in_count_q[1:0]
+    30/46: $1$fordecl_block$373.i[31:0]$414
+    31/46: $0\in_user_q[1][7:0]
+    32/46: $0\in_user_q[0][7:0]
+    33/46: $0\in_dest_q[1][7:0]
+    34/46: $0\in_dest_q[0][7:0]
+    35/46: $0\in_id_q[1][7:0]
+    36/46: $0\in_id_q[0][7:0]
+    37/46: $0\in_last_q[1][0:0]
+    38/46: $0\in_last_q[0][0:0]
+    39/46: $0\in_strb_q[1][15:0]
+    40/46: $0\in_strb_q[0][15:0]
+    41/46: $0\in_keep_q[1][15:0]
+    42/46: $0\in_keep_q[0][15:0]
+    43/46: $0\in_data_q[1][127:0]
+    44/46: $0\in_data_q[0][127:0]
+    45/46: $0\in_rd_q[0:0]
+    46/46: $0\in_wr_q[0:0]
+Creating decoders for process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:100$proc$394'.
+     1/2: $2\in_count_c[1:0]
+     2/2: $1\in_count_c[1:0]
+Creating decoders for process `\sm4_core.$../rtl/sm4_core.sv:66$proc$326'.
+     1/8: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:222$310.$result[31:0]$365
+     2/8: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:222$309.$result[31:0]$361
+     3/8: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:222$308.$result[31:0]$357
+     4/8: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:222$307.$result[31:0]$353
+     5/8: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:213$306.$result[7:0]$352
+     6/8: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:213$305.$result[7:0]$351
+     7/8: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:214$304.$result[7:0]$350
+     8/8: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:214$303.$result[7:0]$349
+Creating decoders for process `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+     1/9: $0\done_o[0:0]
+     2/9: $0\x3_q[31:0]
+     3/9: $0\x2_q[31:0]
+     4/9: $0\x1_q[31:0]
+     5/9: $0\x0_q[31:0]
+     6/9: $0\mode_q[0:0]
+     7/9: $0\result_o[127:0]
+     8/9: $0\round_q[4:0]
+     9/9: $0\state_q[1:0]
+Creating decoders for process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:66$proc$264'.
+     1/6: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:229$52.$result[31:0]$294
+     2/6: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:229$51.$result[31:0]$290
+     3/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:213$50.$result[7:0]$289
+     4/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:213$49.$result[7:0]$288
+     5/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:214$48.$result[7:0]$287
+     6/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:214$47.$result[7:0]$286
+Creating decoders for process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:66$proc$259'.
+     1/1: $1\sm4_pkg::f_ck$func$../rtl/sm4_key_schedule.sv:66$44.$result[31:0]$263
+Creating decoders for process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:65$proc$223'.
+     1/6: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:229$43.$result[31:0]$253
+     2/6: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:229$42.$result[31:0]$249
+     3/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:213$41.$result[7:0]$248
+     4/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:213$40.$result[7:0]$247
+     5/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:214$39.$result[7:0]$246
+     6/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:214$38.$result[7:0]$245
+Creating decoders for process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:65$proc$218'.
+     1/1: $1\sm4_pkg::f_ck$func$../rtl/sm4_key_schedule.sv:65$35.$result[31:0]$222
+Creating decoders for process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:64$proc$182'.
+     1/6: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:229$34.$result[31:0]$212
+     2/6: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:229$33.$result[31:0]$208
+     3/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:213$32.$result[7:0]$207
+     4/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:213$31.$result[7:0]$206
+     5/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:214$30.$result[7:0]$205
+     6/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:214$29.$result[7:0]$204
+Creating decoders for process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:64$proc$177'.
+     1/1: $1\sm4_pkg::f_ck$func$../rtl/sm4_key_schedule.sv:64$26.$result[31:0]$181
+Creating decoders for process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:63$proc$141'.
+     1/6: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:229$25.$result[31:0]$171
+     2/6: $1\sm4_pkg::f_rotl$func$../rtl/sm4_pkg.sv:229$24.$result[31:0]$167
+     3/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:213$23.$result[7:0]$166
+     4/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:213$22.$result[7:0]$165
+     5/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:214$21.$result[7:0]$164
+     6/6: $1\sm4_pkg::f_sbox$func$../rtl/sm4_pkg.sv:214$20.$result[7:0]$163
+Creating decoders for process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:63$proc$136'.
+     1/1: $1\sm4_pkg::f_ck$func$../rtl/sm4_key_schedule.sv:63$17.$result[31:0]$140
+Creating decoders for process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+     1/22: $3$lookahead\rk_o$62[1023:0]$89
+     2/22: $3$bitselwrite$pos$../rtl/sm4_key_schedule.sv:111$13[31:0]$85
+     3/22: $3$bitselwrite$pos$../rtl/sm4_key_schedule.sv:123$16[31:0]$88
+     4/22: $3$bitselwrite$pos$../rtl/sm4_key_schedule.sv:119$15[31:0]$87
+     5/22: $3$bitselwrite$pos$../rtl/sm4_key_schedule.sv:115$14[31:0]$86
+     6/22: $2$lookahead\rk_o$62[1023:0]$79
+     7/22: $2$bitselwrite$pos$../rtl/sm4_key_schedule.sv:123$16[31:0]$78
+     8/22: $2$bitselwrite$pos$../rtl/sm4_key_schedule.sv:119$15[31:0]$77
+     9/22: $2$bitselwrite$pos$../rtl/sm4_key_schedule.sv:115$14[31:0]$76
+    10/22: $2$bitselwrite$pos$../rtl/sm4_key_schedule.sv:111$13[31:0]$75
+    11/22: $1$lookahead\rk_o$62[1023:0]$74
+    12/22: $1$bitselwrite$pos$../rtl/sm4_key_schedule.sv:123$16[31:0]$73
+    13/22: $1$bitselwrite$pos$../rtl/sm4_key_schedule.sv:119$15[31:0]$72
+    14/22: $1$bitselwrite$pos$../rtl/sm4_key_schedule.sv:115$14[31:0]$71
+    15/22: $1$bitselwrite$pos$../rtl/sm4_key_schedule.sv:111$13[31:0]$70
+    16/22: $0\k3_q[31:0]
+    17/22: $0\k2_q[31:0]
+    18/22: $0\k1_q[31:0]
+    19/22: $0\k0_q[31:0]
+    20/22: $0\round_q[4:0]
+    21/22: $0\state_q[1:0]
+    22/22: $0\rk_valid_o[0:0]
+
+6.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\sm4_axis_ip.$mem2reg_rd$\in_data_q$../rtl/sm4_axis_ip.sv:98$375_DATA' from process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:98$proc$471'.
+No latch inferred for signal `\sm4_axis_ip.\in_count_c' from process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:100$proc$394'.
+No latch inferred for signal `\sm4_core.\sm4_pkg::f_t$func$../rtl/sm4_core.sv:66$300.$result' from process `\sm4_core.$../rtl/sm4_core.sv:66$proc$326'.
+No latch inferred for signal `\sm4_key_schedule.\sm4_pkg::f_t_key$func$../rtl/sm4_key_schedule.sv:66$8.$result' from process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:66$proc$264'.
+No latch inferred for signal `\sm4_key_schedule.\sm4_pkg::f_ck$func$../rtl/sm4_key_schedule.sv:66$7.$result' from process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:66$proc$259'.
+No latch inferred for signal `\sm4_key_schedule.\sm4_pkg::f_t_key$func$../rtl/sm4_key_schedule.sv:65$6.$result' from process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:65$proc$223'.
+No latch inferred for signal `\sm4_key_schedule.\sm4_pkg::f_ck$func$../rtl/sm4_key_schedule.sv:65$5.$result' from process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:65$proc$218'.
+No latch inferred for signal `\sm4_key_schedule.\sm4_pkg::f_t_key$func$../rtl/sm4_key_schedule.sv:64$4.$result' from process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:64$proc$182'.
+No latch inferred for signal `\sm4_key_schedule.\sm4_pkg::f_ck$func$../rtl/sm4_key_schedule.sv:64$3.$result' from process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:64$proc$177'.
+No latch inferred for signal `\sm4_key_schedule.\sm4_pkg::f_t_key$func$../rtl/sm4_key_schedule.sv:63$2.$result' from process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:63$proc$141'.
+No latch inferred for signal `\sm4_key_schedule.\sm4_pkg::f_ck$func$../rtl/sm4_key_schedule.sv:63$1.$result' from process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:63$proc$136'.
+
+6.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\sm4_axis_ip.\result_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$977' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\result_valid_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$982' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\result_id_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$987' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\result_dest_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$992' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\result_user_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$997' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\active_id_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$1002' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\active_dest_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$1007' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\active_user_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$1012' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_rd$\in_id_q$../rtl/sm4_axis_ip.sv:202$383_ADDR' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$1017' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_rd$\in_id_q$../rtl/sm4_axis_ip.sv:202$383_DATA' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$1022' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_rd$\in_dest_q$../rtl/sm4_axis_ip.sv:203$384_ADDR' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$1027' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_rd$\in_dest_q$../rtl/sm4_axis_ip.sv:203$384_DATA' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$1032' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_rd$\in_user_q$../rtl/sm4_axis_ip.sv:204$385_ADDR' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$1037' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_rd$\in_user_q$../rtl/sm4_axis_ip.sv:204$385_DATA' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+  created $adff cell `$procdff$1042' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_wr_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1047' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_rd_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1052' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_count_q' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1057' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$fordecl_block$373.i' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1062' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_data_q[0]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1067' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_data_q[1]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1072' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_keep_q[0]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1077' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_keep_q[1]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1082' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_strb_q[0]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1087' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_strb_q[1]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1092' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_last_q[0]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1097' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_last_q[1]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1102' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_id_q[0]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1107' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_id_q[1]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1112' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_dest_q[0]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1117' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_dest_q[1]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1122' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_user_q[0]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1127' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.\in_user_q[1]' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1132' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_data_q$../rtl/sm4_axis_ip.sv:124$376_ADDR' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1137' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_data_q$../rtl/sm4_axis_ip.sv:124$376_DATA' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1142' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_keep_q$../rtl/sm4_axis_ip.sv:125$377_ADDR' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1147' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_keep_q$../rtl/sm4_axis_ip.sv:125$377_DATA' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1152' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_strb_q$../rtl/sm4_axis_ip.sv:126$378_ADDR' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1157' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_strb_q$../rtl/sm4_axis_ip.sv:126$378_DATA' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1162' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_last_q$../rtl/sm4_axis_ip.sv:127$379_ADDR' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1167' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_last_q$../rtl/sm4_axis_ip.sv:127$379_DATA' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1172' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_id_q$../rtl/sm4_axis_ip.sv:128$380_ADDR' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1177' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_id_q$../rtl/sm4_axis_ip.sv:128$380_DATA' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1182' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_dest_q$../rtl/sm4_axis_ip.sv:129$381_ADDR' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1187' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_dest_q$../rtl/sm4_axis_ip.sv:129$381_DATA' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1192' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_user_q$../rtl/sm4_axis_ip.sv:130$382_ADDR' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1197' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_axis_ip.$mem2reg_wr$\in_user_q$../rtl/sm4_axis_ip.sv:130$382_DATA' using process `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+  created $adff cell `$procdff$1202' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_core.\state_q' using process `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+  created $adff cell `$procdff$1207' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_core.\round_q' using process `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+  created $adff cell `$procdff$1212' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_core.\done_o' using process `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+  created $adff cell `$procdff$1217' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_core.\result_o' using process `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+  created $adff cell `$procdff$1222' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_core.\mode_q' using process `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+  created $adff cell `$procdff$1227' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_core.\x0_q' using process `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+  created $adff cell `$procdff$1232' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_core.\x1_q' using process `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+  created $adff cell `$procdff$1237' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_core.\x2_q' using process `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+  created $adff cell `$procdff$1242' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_core.\x3_q' using process `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+  created $adff cell `$procdff$1247' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.\rk_o' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1252' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.\rk_valid_o' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1257' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.\state_q' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1262' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.\round_q' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1267' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.\k0_q' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1272' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.\k1_q' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1277' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.\k2_q' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1282' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.\k3_q' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1287' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.$bitselwrite$pos$../rtl/sm4_key_schedule.sv:111$13' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1292' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.$bitselwrite$pos$../rtl/sm4_key_schedule.sv:115$14' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1297' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.$bitselwrite$pos$../rtl/sm4_key_schedule.sv:119$15' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1302' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.$bitselwrite$pos$../rtl/sm4_key_schedule.sv:123$16' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1307' with positive edge clock and positive level reset.
+Creating register for signal `\sm4_key_schedule.$lookahead\rk_o$62' using process `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+  created $adff cell `$procdff$1312' with positive edge clock and positive level reset.
+
+6.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+6.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:98$proc$471'.
+Removing empty process `sm4_axis_ip.$../rtl/sm4_axis_ip.sv:98$proc$471'.
+Found and cleaned up 6 empty switches in `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+Removing empty process `sm4_axis_ip.$../rtl/sm4_axis_ip.sv:189$proc$447'.
+Found and cleaned up 9 empty switches in `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+Removing empty process `sm4_axis_ip.$../rtl/sm4_axis_ip.sv:106$proc$397'.
+Found and cleaned up 2 empty switches in `\sm4_axis_ip.$../rtl/sm4_axis_ip.sv:100$proc$394'.
+Removing empty process `sm4_axis_ip.$../rtl/sm4_axis_ip.sv:100$proc$394'.
+Found and cleaned up 8 empty switches in `\sm4_core.$../rtl/sm4_core.sv:66$proc$326'.
+Removing empty process `sm4_core.$../rtl/sm4_core.sv:66$proc$326'.
+Found and cleaned up 3 empty switches in `\sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+Removing empty process `sm4_core.$../rtl/sm4_core.sv:74$proc$321'.
+Found and cleaned up 6 empty switches in `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:66$proc$264'.
+Removing empty process `sm4_key_schedule.$../rtl/sm4_key_schedule.sv:66$proc$264'.
+Found and cleaned up 1 empty switch in `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:66$proc$259'.
+Removing empty process `sm4_key_schedule.$../rtl/sm4_key_schedule.sv:66$proc$259'.
+Found and cleaned up 6 empty switches in `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:65$proc$223'.
+Removing empty process `sm4_key_schedule.$../rtl/sm4_key_schedule.sv:65$proc$223'.
+Found and cleaned up 1 empty switch in `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:65$proc$218'.
+Removing empty process `sm4_key_schedule.$../rtl/sm4_key_schedule.sv:65$proc$218'.
+Found and cleaned up 6 empty switches in `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:64$proc$182'.
+Removing empty process `sm4_key_schedule.$../rtl/sm4_key_schedule.sv:64$proc$182'.
+Found and cleaned up 1 empty switch in `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:64$proc$177'.
+Removing empty process `sm4_key_schedule.$../rtl/sm4_key_schedule.sv:64$proc$177'.
+Found and cleaned up 6 empty switches in `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:63$proc$141'.
+Removing empty process `sm4_key_schedule.$../rtl/sm4_key_schedule.sv:63$proc$141'.
+Found and cleaned up 1 empty switch in `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:63$proc$136'.
+Removing empty process `sm4_key_schedule.$../rtl/sm4_key_schedule.sv:63$proc$136'.
+Found and cleaned up 4 empty switches in `\sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+Removing empty process `sm4_key_schedule.$../rtl/sm4_key_schedule.sv:76$proc$63'.
+Cleaned up 61 empty switches.
+
+6.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sm4_axis_ip.
+<suppressed ~111 debug messages>
+Optimizing module sm4_core.
+<suppressed ~34 debug messages>
+Optimizing module sm4_key_schedule.
+<suppressed ~65 debug messages>
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sm4_axis_ip.
+Optimizing module sm4_core.
+<suppressed ~3 debug messages>
+Optimizing module sm4_key_schedule.
+<suppressed ~12 debug messages>
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sm4_axis_ip'.
+Computing hashes of 190 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+Computing hashes of 118 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+<suppressed ~216 debug messages>
+Finding identical cells in module `\sm4_core'.
+Computing hashes of 81 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+Computing hashes of 60 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+<suppressed ~63 debug messages>
+Finding identical cells in module `\sm4_key_schedule'.
+Computing hashes of 260 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 174 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 160 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 157 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 154 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 151 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+<suppressed ~327 debug messages>
+Removed a total of 202 cells.
+
+7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \sm4_axis_ip..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$675.
+    dead port 2/2 on $mux $procmux$675.
+    dead port 1/2 on $mux $procmux$672.
+    dead port 2/2 on $mux $procmux$672.
+    dead port 1/2 on $mux $procmux$669.
+    dead port 2/2 on $mux $procmux$669.
+    dead port 1/2 on $mux $procmux$666.
+    dead port 2/2 on $mux $procmux$666.
+    dead port 1/2 on $mux $procmux$663.
+    dead port 2/2 on $mux $procmux$663.
+    dead port 1/2 on $mux $procmux$660.
+    dead port 2/2 on $mux $procmux$660.
+    dead port 1/2 on $mux $procmux$657.
+    dead port 2/2 on $mux $procmux$657.
+    dead port 1/2 on $mux $procmux$654.
+    dead port 2/2 on $mux $procmux$654.
+    dead port 1/2 on $mux $procmux$651.
+    dead port 2/2 on $mux $procmux$651.
+    dead port 1/2 on $mux $procmux$648.
+    dead port 2/2 on $mux $procmux$648.
+    dead port 1/2 on $mux $procmux$645.
+    dead port 2/2 on $mux $procmux$645.
+    dead port 1/2 on $mux $procmux$642.
+    dead port 2/2 on $mux $procmux$642.
+    dead port 1/2 on $mux $procmux$639.
+    dead port 2/2 on $mux $procmux$639.
+    dead port 1/2 on $mux $procmux$636.
+    dead port 2/2 on $mux $procmux$636.
+    dead port 1/2 on $mux $procmux$607.
+    dead port 2/2 on $mux $procmux$607.
+    dead port 1/2 on $mux $procmux$604.
+    dead port 2/2 on $mux $procmux$604.
+    dead port 1/2 on $mux $procmux$601.
+    dead port 2/2 on $mux $procmux$601.
+    dead port 1/2 on $mux $procmux$598.
+    dead port 2/2 on $mux $procmux$598.
+    dead port 1/2 on $mux $procmux$595.
+    dead port 2/2 on $mux $procmux$595.
+    dead port 1/2 on $mux $procmux$592.
+    dead port 2/2 on $mux $procmux$592.
+    dead port 2/2 on $mux $procmux$589.
+    dead port 2/2 on $mux $procmux$583.
+    dead port 2/2 on $mux $procmux$577.
+Running muxtree optimizer on module \sm4_core..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \sm4_key_schedule..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$869.
+    dead port 1/4 on $pmux $procmux$912.
+    dead port 2/4 on $pmux $procmux$912.
+    dead port 3/4 on $pmux $procmux$912.
+    dead port 4/4 on $pmux $procmux$912.
+    dead port 1/2 on $mux $procmux$894.
+    dead port 2/2 on $mux $procmux$894.
+    dead port 1/4 on $pmux $procmux$879.
+    dead port 2/4 on $pmux $procmux$879.
+    dead port 3/4 on $pmux $procmux$879.
+    dead port 4/4 on $pmux $procmux$879.
+    dead port 1/4 on $pmux $procmux$908.
+    dead port 2/4 on $pmux $procmux$908.
+    dead port 3/4 on $pmux $procmux$908.
+    dead port 4/4 on $pmux $procmux$908.
+    dead port 1/2 on $mux $procmux$892.
+    dead port 2/2 on $mux $procmux$892.
+    dead port 1/2 on $mux $procmux$874.
+    dead port 2/2 on $mux $procmux$874.
+    dead port 1/2 on $mux $procmux$888.
+    dead port 2/2 on $mux $procmux$888.
+    dead port 1/2 on $mux $procmux$876.
+    dead port 2/2 on $mux $procmux$876.
+    dead port 1/4 on $pmux $procmux$904.
+    dead port 2/4 on $pmux $procmux$904.
+    dead port 3/4 on $pmux $procmux$904.
+    dead port 4/4 on $pmux $procmux$904.
+    dead port 1/2 on $mux $procmux$886.
+    dead port 2/2 on $mux $procmux$886.
+    dead port 1/4 on $pmux $procmux$900.
+    dead port 2/4 on $pmux $procmux$900.
+    dead port 3/4 on $pmux $procmux$900.
+    dead port 4/4 on $pmux $procmux$900.
+    dead port 1/2 on $mux $procmux$883.
+    dead port 2/2 on $mux $procmux$883.
+Removed 78 multiplexer ports.
+<suppressed ~149 debug messages>
+
+7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \sm4_axis_ip.
+  Optimizing cells in module \sm4_core.
+  Optimizing cells in module \sm4_key_schedule.
+    New ctrl vector for $pmux cell $procmux$917: $auto$opt_reduce.cc:137:opt_pmux$1322
+    New ctrl vector for $pmux cell $procmux$896: { $procmux$969_CMP $auto$opt_reduce.cc:137:opt_pmux$1324 }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:131:opt_pmux$1323: { $procmux$972_CMP $procmux$962_CMP }
+  Optimizing cells in module \sm4_key_schedule.
+Performed a total of 3 changes.
+
+7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sm4_axis_ip'.
+Computing hashes of 95 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+Finding identical cells in module `\sm4_core'.
+Computing hashes of 60 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+Finding identical cells in module `\sm4_key_schedule'.
+Computing hashes of 140 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Removed a total of 0 cells.
+
+7.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$1007 ($adff) from module sm4_axis_ip (D = $3$mem2reg_rd$\in_dest_q$../rtl/sm4_axis_ip.sv:203$384_DATA[7:0]$468, Q = \active_dest_q).
+Adding EN signal on $procdff$1047 ($adff) from module sm4_axis_ip (D = $../rtl/sm4_axis_ip.sv:131$add$443_Y, Q = \in_wr_q).
+Adding EN signal on $procdff$1102 ($adff) from module sm4_axis_ip (D = \s_axis_tlast_i, Q = \in_last_q[1]).
+Adding EN signal on $procdff$1012 ($adff) from module sm4_axis_ip (D = $3$mem2reg_rd$\in_user_q$../rtl/sm4_axis_ip.sv:204$385_DATA[7:0]$469, Q = \active_user_q).
+Adding EN signal on $procdff$1082 ($adff) from module sm4_axis_ip (D = \s_axis_tkeep_i, Q = \in_keep_q[1]).
+Adding EN signal on $procdff$1132 ($adff) from module sm4_axis_ip (D = \s_axis_tuser_i, Q = \in_user_q[1]).
+Handling D = Q on $procdff$1062 ($adff) from module sm4_axis_ip (removing D path).
+Adding EN signal on $procdff$977 ($adff) from module sm4_axis_ip (D = \u_core_result_o, Q = \result_q).
+Adding EN signal on $procdff$1127 ($adff) from module sm4_axis_ip (D = \s_axis_tuser_i, Q = \in_user_q[0]).
+Adding EN signal on $procdff$982 ($adff) from module sm4_axis_ip (D = $procmux$630_Y, Q = \result_valid_q).
+Adding EN signal on $procdff$1092 ($adff) from module sm4_axis_ip (D = \s_axis_tstrb_i, Q = \in_strb_q[1]).
+Adding EN signal on $procdff$1067 ($adff) from module sm4_axis_ip (D = \s_axis_tdata_i, Q = \in_data_q[0]).
+Adding EN signal on $procdff$987 ($adff) from module sm4_axis_ip (D = \active_id_q, Q = \result_id_q).
+Adding EN signal on $procdff$1112 ($adff) from module sm4_axis_ip (D = \s_axis_tid_i, Q = \in_id_q[1]).
+Adding EN signal on $procdff$992 ($adff) from module sm4_axis_ip (D = \active_dest_q, Q = \result_dest_q).
+Adding EN signal on $procdff$1072 ($adff) from module sm4_axis_ip (D = \s_axis_tdata_i, Q = \in_data_q[1]).
+Adding EN signal on $procdff$1097 ($adff) from module sm4_axis_ip (D = \s_axis_tlast_i, Q = \in_last_q[0]).
+Adding EN signal on $procdff$997 ($adff) from module sm4_axis_ip (D = \active_user_q, Q = \result_user_q).
+Adding EN signal on $procdff$1122 ($adff) from module sm4_axis_ip (D = \s_axis_tdest_i, Q = \in_dest_q[1]).
+Adding EN signal on $procdff$1002 ($adff) from module sm4_axis_ip (D = $3$mem2reg_rd$\in_id_q$../rtl/sm4_axis_ip.sv:202$383_DATA[7:0]$467, Q = \active_id_q).
+Adding EN signal on $procdff$1077 ($adff) from module sm4_axis_ip (D = \s_axis_tkeep_i, Q = \in_keep_q[0]).
+Adding EN signal on $procdff$1052 ($adff) from module sm4_axis_ip (D = $../rtl/sm4_axis_ip.sv:134$add$444_Y, Q = \in_rd_q).
+Adding EN signal on $procdff$1117 ($adff) from module sm4_axis_ip (D = \s_axis_tdest_i, Q = \in_dest_q[0]).
+Adding EN signal on $procdff$1087 ($adff) from module sm4_axis_ip (D = \s_axis_tstrb_i, Q = \in_strb_q[0]).
+Adding EN signal on $procdff$1107 ($adff) from module sm4_axis_ip (D = \s_axis_tid_i, Q = \in_id_q[0]).
+Setting constant 0-bit at position 0 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 1-bit at position 1 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 2 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 3 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 4 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 5 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 6 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 7 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 8 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 9 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 10 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 11 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 12 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 13 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 14 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 15 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 16 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 17 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 18 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 19 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 20 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 21 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 22 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 23 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 24 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 25 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 26 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 27 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 28 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 29 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 30 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 31 on $procdff$1062 ($dlatch) from module sm4_axis_ip.
+Setting constant 0-bit at position 0 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 1 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 2 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 3 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 4 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 5 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 6 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 7 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 8 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 9 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 10 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 11 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 12 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 13 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 14 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 15 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 16 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 17 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 18 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 19 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 20 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 21 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 22 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 23 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 24 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 25 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 26 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 27 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 28 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 29 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 30 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 31 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 32 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 33 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 34 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 35 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 36 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 37 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 38 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 39 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 40 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 41 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 42 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 43 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 44 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 45 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 46 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 47 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 48 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 49 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 50 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 51 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 52 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 53 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 54 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 55 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 56 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 57 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 58 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 59 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 60 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 61 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 62 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 63 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 64 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 65 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 66 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 67 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 68 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 69 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 70 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 71 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 72 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 73 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 74 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 75 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 76 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 77 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 78 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 79 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 80 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 81 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 82 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 83 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 84 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 85 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 86 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 87 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 88 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 89 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 90 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 91 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 92 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 93 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 94 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 95 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 96 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 97 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 98 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 99 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 100 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 101 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 102 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 103 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 104 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 105 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 106 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 107 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 108 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 109 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 110 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 111 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 112 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 113 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 114 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 115 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 116 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 117 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 118 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 119 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 120 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 121 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 122 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 123 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 124 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 125 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 126 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 127 on $procdff$1142 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 0 on $procdff$1042 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 1 on $procdff$1042 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 2 on $procdff$1042 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 3 on $procdff$1042 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 4 on $procdff$1042 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 5 on $procdff$1042 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 6 on $procdff$1042 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 7 on $procdff$1042 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 0 on $procdff$1157 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 0 on $procdff$1152 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 1 on $procdff$1152 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 2 on $procdff$1152 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 3 on $procdff$1152 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 4 on $procdff$1152 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 5 on $procdff$1152 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 6 on $procdff$1152 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 7 on $procdff$1152 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 8 on $procdff$1152 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 9 on $procdff$1152 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 10 on $procdff$1152 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 11 on $procdff$1152 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 12 on $procdff$1152 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 13 on $procdff$1152 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 14 on $procdff$1152 ($adff) from module sm4_axis_ip.
+Setting constant 0-bit at position 15 on $procdff$1152 ($adff) from module sm4_axis_ip.
+Adding EN signal on $procdff$1237 ($adff) from module sm4_core (D = $procmux$795_Y, Q = \x1_q).
+Adding EN signal on $procdff$1222 ($adff) from module sm4_core (D = { $../rtl/sm4_core.sv:66$xor$319_Y \x3_q \x2_q \x1_q }, Q = \result_o).
+Adding EN signal on $procdff$1232 ($adff) from module sm4_core (D = $procmux$802_Y, Q = \x0_q).
+Adding EN signal on $procdff$1242 ($adff) from module sm4_core (D = $procmux$788_Y, Q = \x2_q).
+Adding EN signal on $procdff$1247 ($adff) from module sm4_core (D = $procmux$781_Y, Q = \x3_q).
+Adding EN signal on $procdff$1212 ($adff) from module sm4_core (D = $procmux$822_Y, Q = \round_q).
+Adding EN signal on $procdff$1227 ($adff) from module sm4_core (D = \mode_i, Q = \mode_q).
+Adding EN signal on $procdff$1207 ($adff) from module sm4_core (D = $procmux$831_Y, Q = \state_q).
+Adding EN signal on $procdff$1257 ($adff) from module sm4_key_schedule (D = $procmux$968_Y, Q = \rk_valid_o).
+Adding EN signal on $procdff$1262 ($adff) from module sm4_key_schedule (D = $procmux$960_Y, Q = \state_q).
+Adding EN signal on $procdff$1252 ($adff) from module sm4_key_schedule (D = $procmux$896_Y, Q = \rk_o).
+Adding EN signal on $procdff$1282 ($adff) from module sm4_key_schedule (D = $procmux$929_Y, Q = \k2_q).
+Adding EN signal on $procdff$1287 ($adff) from module sm4_key_schedule (D = $procmux$921_Y, Q = \k3_q).
+Adding EN signal on $procdff$1272 ($adff) from module sm4_key_schedule (D = $procmux$948_Y, Q = \k0_q).
+Adding EN signal on $procdff$1277 ($adff) from module sm4_key_schedule (D = $procmux$938_Y, Q = \k1_q).
+Adding EN signal on $procdff$1267 ($adff) from module sm4_key_schedule (D = $procmux$953_Y, Q = \round_q).
+Setting constant 0-bit at position 0 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 2 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 3 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 4 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 5 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 6 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 7 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 8 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 9 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 10 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 11 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 12 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 13 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 14 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 15 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 16 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 17 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 18 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 19 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 20 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 21 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 22 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 23 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 24 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 25 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 26 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 27 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 28 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 29 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 30 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 31 on $procdff$1302 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 0 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 2 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 3 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 4 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 5 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 6 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 7 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 8 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 9 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 10 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 11 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 12 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 13 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 14 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 15 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 16 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 17 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 18 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 19 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 20 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 21 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 22 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 23 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 24 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 25 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 26 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 27 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 28 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 29 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 30 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 31 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 32 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 33 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 34 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 35 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 36 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 37 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 38 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 39 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 40 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 41 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 42 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 43 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 44 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 45 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 46 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 47 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 48 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 49 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 50 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 51 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 52 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 53 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 54 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 55 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 56 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 57 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 58 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 59 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 60 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 61 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 62 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 63 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 64 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 65 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 66 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 67 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 68 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 69 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 70 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 71 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 72 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 73 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 74 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 75 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 76 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 77 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 78 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 79 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 80 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 81 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 82 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 83 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 84 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 85 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 86 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 87 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 88 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 89 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 90 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 91 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 92 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 93 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 94 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 95 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 96 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 97 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 98 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 99 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 100 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 101 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 102 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 103 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 104 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 105 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 106 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 107 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 108 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 109 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 110 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 111 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 112 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 113 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 114 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 115 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 116 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 117 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 118 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 119 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 120 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 121 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 122 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 123 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 124 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 125 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 126 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 127 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 128 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 129 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 130 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 131 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 132 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 133 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 134 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 135 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 136 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 137 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 138 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 139 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 140 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 141 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 142 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 143 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 144 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 145 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 146 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 147 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 148 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 149 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 150 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 151 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 152 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 153 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 154 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 155 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 156 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 157 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 158 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 159 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 160 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 161 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 162 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 163 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 164 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 165 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 166 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 167 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 168 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 169 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 170 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 171 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 172 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 173 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 174 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 175 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 176 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 177 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 178 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 179 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 180 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 181 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 182 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 183 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 184 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 185 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 186 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 187 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 188 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 189 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 190 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 191 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 192 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 193 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 194 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 195 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 196 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 197 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 198 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 199 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 200 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 201 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 202 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 203 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 204 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 205 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 206 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 207 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 208 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 209 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 210 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 211 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 212 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 213 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 214 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 215 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 216 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 217 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 218 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 219 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 220 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 221 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 222 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 223 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 224 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 225 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 226 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 227 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 228 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 229 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 230 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 231 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 232 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 233 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 234 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 235 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 236 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 237 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 238 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 239 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 240 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 241 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 242 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 243 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 244 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 245 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 246 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 247 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 248 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 249 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 250 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 251 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 252 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 253 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 254 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 255 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 256 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 257 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 258 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 259 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 260 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 261 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 262 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 263 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 264 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 265 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 266 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 267 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 268 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 269 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 270 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 271 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 272 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 273 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 274 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 275 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 276 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 277 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 278 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 279 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 280 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 281 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 282 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 283 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 284 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 285 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 286 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 287 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 288 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 289 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 290 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 291 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 292 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 293 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 294 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 295 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 296 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 297 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 298 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 299 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 300 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 301 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 302 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 303 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 304 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 305 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 306 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 307 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 308 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 309 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 310 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 311 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 312 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 313 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 314 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 315 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 316 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 317 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 318 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 319 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 320 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 321 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 322 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 323 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 324 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 325 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 326 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 327 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 328 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 329 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 330 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 331 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 332 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 333 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 334 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 335 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 336 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 337 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 338 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 339 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 340 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 341 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 342 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 343 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 344 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 345 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 346 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 347 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 348 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 349 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 350 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 351 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 352 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 353 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 354 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 355 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 356 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 357 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 358 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 359 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 360 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 361 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 362 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 363 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 364 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 365 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 366 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 367 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 368 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 369 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 370 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 371 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 372 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 373 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 374 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 375 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 376 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 377 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 378 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 379 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 380 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 381 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 382 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 383 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 384 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 385 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 386 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 387 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 388 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 389 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 390 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 391 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 392 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 393 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 394 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 395 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 396 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 397 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 398 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 399 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 400 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 401 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 402 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 403 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 404 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 405 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 406 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 407 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 408 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 409 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 410 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 411 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 412 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 413 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 414 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 415 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 416 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 417 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 418 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 419 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 420 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 421 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 422 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 423 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 424 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 425 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 426 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 427 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 428 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 429 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 430 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 431 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 432 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 433 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 434 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 435 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 436 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 437 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 438 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 439 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 440 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 441 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 442 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 443 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 444 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 445 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 446 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 447 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 448 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 449 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 450 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 451 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 452 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 453 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 454 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 455 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 456 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 457 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 458 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 459 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 460 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 461 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 462 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 463 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 464 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 465 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 466 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 467 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 468 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 469 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 470 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 471 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 472 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 473 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 474 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 475 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 476 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 477 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 478 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 479 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 480 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 481 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 482 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 483 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 484 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 485 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 486 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 487 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 488 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 489 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 490 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 491 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 492 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 493 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 494 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 495 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 496 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 497 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 498 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 499 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 500 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 501 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 502 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 503 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 504 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 505 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 506 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 507 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 508 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 509 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 510 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 511 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 512 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 513 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 514 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 515 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 516 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 517 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 518 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 519 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 520 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 521 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 522 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 523 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 524 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 525 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 526 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 527 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 528 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 529 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 530 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 531 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 532 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 533 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 534 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 535 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 536 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 537 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 538 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 539 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 540 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 541 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 542 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 543 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 544 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 545 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 546 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 547 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 548 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 549 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 550 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 551 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 552 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 553 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 554 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 555 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 556 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 557 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 558 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 559 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 560 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 561 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 562 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 563 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 564 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 565 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 566 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 567 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 568 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 569 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 570 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 571 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 572 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 573 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 574 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 575 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 576 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 577 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 578 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 579 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 580 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 581 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 582 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 583 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 584 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 585 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 586 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 587 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 588 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 589 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 590 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 591 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 592 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 593 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 594 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 595 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 596 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 597 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 598 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 599 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 600 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 601 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 602 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 603 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 604 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 605 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 606 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 607 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 608 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 609 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 610 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 611 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 612 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 613 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 614 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 615 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 616 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 617 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 618 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 619 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 620 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 621 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 622 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 623 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 624 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 625 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 626 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 627 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 628 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 629 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 630 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 631 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 632 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 633 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 634 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 635 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 636 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 637 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 638 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 639 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 640 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 641 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 642 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 643 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 644 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 645 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 646 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 647 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 648 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 649 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 650 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 651 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 652 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 653 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 654 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 655 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 656 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 657 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 658 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 659 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 660 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 661 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 662 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 663 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 664 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 665 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 666 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 667 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 668 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 669 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 670 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 671 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 672 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 673 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 674 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 675 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 676 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 677 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 678 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 679 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 680 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 681 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 682 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 683 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 684 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 685 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 686 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 687 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 688 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 689 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 690 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 691 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 692 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 693 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 694 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 695 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 696 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 697 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 698 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 699 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 700 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 701 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 702 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 703 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 704 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 705 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 706 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 707 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 708 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 709 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 710 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 711 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 712 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 713 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 714 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 715 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 716 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 717 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 718 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 719 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 720 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 721 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 722 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 723 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 724 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 725 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 726 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 727 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 728 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 729 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 730 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 731 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 732 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 733 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 734 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 735 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 736 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 737 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 738 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 739 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 740 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 741 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 742 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 743 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 744 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 745 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 746 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 747 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 748 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 749 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 750 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 751 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 752 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 753 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 754 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 755 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 756 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 757 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 758 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 759 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 760 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 761 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 762 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 763 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 764 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 765 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 766 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 767 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 768 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 769 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 770 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 771 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 772 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 773 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 774 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 775 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 776 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 777 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 778 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 779 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 780 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 781 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 782 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 783 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 784 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 785 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 786 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 787 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 788 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 789 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 790 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 791 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 792 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 793 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 794 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 795 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 796 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 797 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 798 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 799 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 800 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 801 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 802 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 803 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 804 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 805 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 806 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 807 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 808 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 809 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 810 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 811 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 812 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 813 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 814 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 815 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 816 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 817 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 818 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 819 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 820 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 821 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 822 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 823 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 824 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 825 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 826 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 827 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 828 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 829 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 830 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 831 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 832 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 833 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 834 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 835 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 836 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 837 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 838 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 839 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 840 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 841 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 842 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 843 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 844 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 845 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 846 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 847 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 848 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 849 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 850 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 851 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 852 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 853 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 854 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 855 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 856 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 857 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 858 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 859 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 860 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 861 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 862 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 863 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 864 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 865 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 866 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 867 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 868 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 869 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 870 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 871 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 872 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 873 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 874 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 875 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 876 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 877 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 878 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 879 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 880 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 881 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 882 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 883 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 884 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 885 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 886 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 887 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 888 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 889 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 890 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 891 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 892 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 893 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 894 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 895 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 896 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 897 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 898 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 899 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 900 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 901 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 902 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 903 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 904 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 905 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 906 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 907 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 908 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 909 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 910 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 911 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 912 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 913 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 914 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 915 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 916 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 917 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 918 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 919 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 920 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 921 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 922 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 923 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 924 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 925 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 926 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 927 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 928 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 929 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 930 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 931 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 932 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 933 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 934 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 935 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 936 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 937 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 938 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 939 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 940 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 941 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 942 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 943 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 944 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 945 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 946 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 947 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 948 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 949 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 950 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 951 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 952 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 953 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 954 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 955 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 956 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 957 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 958 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 959 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 960 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 961 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 962 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 963 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 964 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 965 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 966 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 967 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 968 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 969 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 970 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 971 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 972 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 973 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 974 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 975 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 976 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 977 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 978 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 979 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 980 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 981 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 982 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 983 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 984 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 985 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 986 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 987 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 988 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 989 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 990 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 991 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 992 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 993 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 994 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 995 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 996 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 997 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 998 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 999 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1000 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1001 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1002 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1003 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1004 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1005 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1006 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1007 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1008 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1009 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1010 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1011 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1012 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1013 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1014 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1015 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1016 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1017 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1018 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1019 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1020 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1021 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1022 on $procdff$1312 ($adff) from module sm4_key_schedule.
+Setting constant 0-bit at position 1023 on $procdff$1312 ($adff) from module sm4_key_schedule.
+
+7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sm4_axis_ip..
+Finding unused cells or wires in module \sm4_core..
+Finding unused cells or wires in module \sm4_key_schedule..
+Removed 63 unused cells and 832 unused wires.
+<suppressed ~74 debug messages>
+
+7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sm4_axis_ip.
+<suppressed ~1 debug messages>
+Optimizing module sm4_core.
+<suppressed ~5 debug messages>
+Optimizing module sm4_key_schedule.
+<suppressed ~9 debug messages>
+
+7.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \sm4_axis_ip..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \sm4_core..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \sm4_key_schedule..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~73 debug messages>
+
+7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \sm4_axis_ip.
+  Optimizing cells in module \sm4_core.
+  Optimizing cells in module \sm4_key_schedule.
+    New ctrl vector for $pmux cell $procmux$896: $procmux$870_CMP
+  Optimizing cells in module \sm4_key_schedule.
+Performed a total of 1 changes.
+
+7.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sm4_axis_ip'.
+Computing hashes of 57 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+Computing hashes of 51 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+Computing hashes of 48 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+<suppressed ~27 debug messages>
+Finding identical cells in module `\sm4_core'.
+Computing hashes of 73 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+Computing hashes of 64 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+Computing hashes of 60 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+<suppressed ~39 debug messages>
+Finding identical cells in module `\sm4_key_schedule'.
+Computing hashes of 163 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Computing hashes of 151 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+<suppressed ~36 debug messages>
+Removed a total of 34 cells.
+
+7.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sm4_axis_ip..
+Finding unused cells or wires in module \sm4_core..
+Finding unused cells or wires in module \sm4_key_schedule..
+Removed 1 unused cells and 35 unused wires.
+<suppressed ~4 debug messages>
+
+7.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sm4_axis_ip.
+Optimizing module sm4_core.
+Optimizing module sm4_key_schedule.
+
+7.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \sm4_axis_ip..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \sm4_core..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \sm4_key_schedule..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~73 debug messages>
+
+7.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \sm4_axis_ip.
+  Optimizing cells in module \sm4_core.
+  Optimizing cells in module \sm4_key_schedule.
+Performed a total of 0 changes.
+
+7.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\sm4_axis_ip'.
+Computing hashes of 48 cells of `\sm4_axis_ip'.
+Finding duplicate cells in `\sm4_axis_ip'.
+Finding identical cells in module `\sm4_core'.
+Computing hashes of 60 cells of `\sm4_core'.
+Finding duplicate cells in `\sm4_core'.
+Finding identical cells in module `\sm4_key_schedule'.
+Computing hashes of 150 cells of `\sm4_key_schedule'.
+Finding duplicate cells in `\sm4_key_schedule'.
+Removed a total of 0 cells.
+
+7.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \sm4_axis_ip..
+Finding unused cells or wires in module \sm4_core..
+Finding unused cells or wires in module \sm4_key_schedule..
+
+7.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sm4_axis_ip.
+Optimizing module sm4_core.
+Optimizing module sm4_key_schedule.
+
+7.23. Finished fast OPT passes. (There is nothing left to do.)
+
+8. Executing CHECK pass (checking for obvious problems).
+Checking module sm4_axis_ip...
+Checking module sm4_core...
+Checking module sm4_key_schedule...
+Found and reported 0 problems.
+
+9. Printing statistics.
+
+=== sm4_axis_ip ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       74 wires
+     2325 wire bits
+       53 public wires
+     2280 public wire bits
+       24 ports
+      507 port bits
+       46 cells
+        3   $add
+        1   $adff
+       18   $adffe
+        6   $logic_and
+        2   $logic_not
+        1   $lt
+        4   $mux
+        2   $not
+        4   $pmux
+        2   $reduce_and
+        2   $reduce_bool
+        1   $sub
+        2 submodules
+        1   sm4_core
+        1   sm4_key_schedule
+
+=== sm4_core ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       72 wires
+     2459 wire bits
+       32 public wires
+     1780 public wire bits
+       10 ports
+     1287 port bits
+        4 memories
+     8192 memory bits
+       60 cells
+        1   $add
+        1   $adff
+        8   $adffe
+        2   $eq
+        1   $logic_and
+        1   $logic_not
+        4   $meminit
+        4   $memrd_v2
+       10   $mux
+        2   $ne
+        4   $or
+        6   $pmux
+        4   $reduce_and
+        2   $reduce_bool
+        1   $shiftx
+        1   $sub
+        8   $xor
+
+=== sm4_key_schedule ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      166 wires
+    17600 wire bits
+       62 public wires
+     2476 public wire bits
+        7 ports
+     1157 port bits
+       20 memories
+    36864 memory bits
+      150 cells
+        1   $add
+        8   $adffe
+        1   $and
+        6   $eq
+        1   $logic_and
+        2   $logic_not
+        1   $logic_or
+       20   $meminit
+       20   $memrd_v2
+       17   $mux
+        6   $ne
+        1   $neg
+        5   $not
+       12   $or
+        8   $pmux
+        7   $reduce_and
+        2   $reduce_bool
+        3   $reduce_or
+        5   $shift
+       24   $xor
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+      256 sm4_axis_ip
+       60 sm4_core
+      150 sm4_key_schedule
+
+        +----------Count including submodules.
+        | 
+      312 wires
+    22384 wire bits
+      147 public wires
+     6536 public wire bits
+       41 ports
+     2951 port bits
+       24 memories
+    45056 memory bits
+        - processes
+      256 cells
+        5   $add
+        2   $adff
+       34   $adffe
+        1   $and
+        8   $eq
+        8   $logic_and
+        5   $logic_not
+        1   $logic_or
+        1   $lt
+       24   $meminit
+       24   $memrd_v2
+       31   $mux
+        8   $ne
+        1   $neg
+        7   $not
+       16   $or
+       18   $pmux
+       13   $reduce_and
+        6   $reduce_bool
+        3   $reduce_or
+        5   $shift
+        1   $shiftx
+        2   $sub
+       32   $xor
+        2 submodules
+        1   sm4_core
+        1   sm4_key_schedule
+
+Warnings: 7 unique messages, 7 total
+End of script. Logfile hash: 876e8c6aa4, time: 0.97s, user: 0.97s, system: 0.00s
+Yosys 0.71 (git sha1 b4c586fd3, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)
+Time spent: 40% 8x read_verilog (0 sec), 14% 1x check (0 sec), ...
+---------------------------------------------------------------------
+LINT SUCCESSFUL: iverilog -Wall and Yosys check -assert
+0 errors
