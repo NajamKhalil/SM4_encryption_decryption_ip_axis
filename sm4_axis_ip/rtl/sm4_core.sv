@@ -36,8 +36,6 @@ module sm4_core
   output logic                 done_o,
   output logic [127:0]         result_o
 );
-  import sm4_pkg::*;
-
   // ==========================================================================
   // 1. FSM AND STATE WORDS
   // ==========================================================================
@@ -51,7 +49,7 @@ module sm4_core
   e_core_state state_q;
   logic [4:0]  round_q;
   logic        mode_q;
-  word_t       x0_q, x1_q, x2_q, x3_q;
+  sm4_pkg::word_t x0_q, x1_q, x2_q, x3_q;
 
   // ==========================================================================
   // 2. ROUND COMBINATIONAL LOGIC
@@ -59,13 +57,13 @@ module sm4_core
   //    registers, so the critical path is one T() evaluation per cycle.
   // ==========================================================================
 
-  word_t       mixer_c;
-  word_t       xnew_c;
-  logic [4:0]  rk_index_c;
+  sm4_pkg::word_t mixer_c;
+  sm4_pkg::word_t xnew_c;
+  logic [4:0]     rk_index_c;
 
   assign rk_index_c = mode_q ? (5'd31 - round_q) : round_q;
   assign mixer_c    = rk_i[rk_index_c*32 +: 32] ^ x1_q ^ x2_q ^ x3_q;
-  assign xnew_c     = x0_q ^ f_t(mixer_c);
+  assign xnew_c     = x0_q ^ sm4_pkg::f_t(mixer_c);
 
   assign busy_o = (state_q != ST_CORE_IDLE);
 

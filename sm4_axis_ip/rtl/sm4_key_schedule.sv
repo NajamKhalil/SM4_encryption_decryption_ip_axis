@@ -34,8 +34,6 @@ module sm4_key_schedule
   output logic [1023:0]        rk_o,
   output logic                 rk_valid_o
 );
-  import sm4_pkg::*;
-
   // ==========================================================================
   // 1. STATE
   // ==========================================================================
@@ -62,10 +60,10 @@ module sm4_key_schedule
   // Written as a continuous assignment rather than an always_comb case so
   // that every supported simulator elaborates the byte selects identically.
   assign mix_c =
-    (round_q[1:0] == 2'd0) ? f_t_key(k1_q ^ k2_q ^ k3_q ^ f_ck(round_q)) :
-    (round_q[1:0] == 2'd1) ? f_t_key(k2_q ^ k3_q ^ k0_q ^ f_ck(round_q)) :
-    (round_q[1:0] == 2'd2) ? f_t_key(k3_q ^ k0_q ^ k1_q ^ f_ck(round_q)) :
-                             f_t_key(k0_q ^ k1_q ^ k2_q ^ f_ck(round_q));
+    (round_q[1:0] == 2'd0) ? sm4_pkg::f_t_key(k1_q ^ k2_q ^ k3_q ^ sm4_pkg::f_ck(round_q)) :
+    (round_q[1:0] == 2'd1) ? sm4_pkg::f_t_key(k2_q ^ k3_q ^ k0_q ^ sm4_pkg::f_ck(round_q)) :
+    (round_q[1:0] == 2'd2) ? sm4_pkg::f_t_key(k3_q ^ k0_q ^ k1_q ^ sm4_pkg::f_ck(round_q)) :
+                             sm4_pkg::f_t_key(k0_q ^ k1_q ^ k2_q ^ sm4_pkg::f_ck(round_q));
 
   // ready is a registered-state predicate: it never depends on a downstream
   // ready, so it cannot form a valid->ready combinational loop.
@@ -91,10 +89,10 @@ module sm4_key_schedule
         ST_KS_IDLE, ST_KS_DONE: begin
           if (key_valid_i && key_ready_o) begin
             // MK[i] XOR FK[i]; big-endian word order, as in the standard.
-            k0_q       <= key_i[127:96] ^ f_fk(0);
-            k1_q       <= key_i[ 95:64] ^ f_fk(1);
-            k2_q       <= key_i[ 63:32] ^ f_fk(2);
-            k3_q       <= key_i[ 31: 0] ^ f_fk(3);
+            k0_q       <= key_i[127:96] ^ sm4_pkg::f_fk(0);
+            k1_q       <= key_i[ 95:64] ^ sm4_pkg::f_fk(1);
+            k2_q       <= key_i[ 63:32] ^ sm4_pkg::f_fk(2);
+            k3_q       <= key_i[ 31: 0] ^ sm4_pkg::f_fk(3);
             round_q    <= 5'd0;
             rk_valid_o <= 1'b0;
             state_q    <= ST_KS_SEED;

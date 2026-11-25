@@ -132,9 +132,6 @@ module sm4_axis_ip
       end
       if (core_start_s) begin
         in_rd_q <= in_rd_q + 1'b1;
-        active_id_q   <= in_id_q[in_rd_q];
-        active_dest_q <= in_dest_q[in_rd_q];
-        active_user_q <= in_user_q[in_rd_q];
       end
     end
   end
@@ -196,11 +193,16 @@ module sm4_axis_ip
       result_id_q    <= '0;
       result_dest_q  <= '0;
       result_user_q  <= '0;
-      active_id_q    <= '0;
-      active_dest_q  <= '0;
-      active_user_q  <= '0;
+      active_id_q    <= {TID_WIDTH{1'b0}};
+      active_dest_q  <= {TDEST_WIDTH{1'b0}};
+      active_user_q  <= {TUSER_WIDTH{1'b0}};
     end
     else begin
+      if (core_start_s) begin
+        active_id_q    <= in_id_q[in_rd_q];
+        active_dest_q  <= in_dest_q[in_rd_q];
+        active_user_q  <= in_user_q[in_rd_q];
+      end
       if (u_core_done_o) begin
         result_q       <= u_core_result_o;
         result_valid_q <= 1'b1;
