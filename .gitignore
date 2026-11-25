@@ -4,6 +4,7 @@
 *.fst
 *.cfg
 sim/work/
+**/sim/regression/runs/
 monitor/rtl_dashboard.html
 
 # Editor / OS residue

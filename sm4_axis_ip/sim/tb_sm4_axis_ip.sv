@@ -11,6 +11,7 @@
 //   round function), not a call into the DUT package. It checks standard
 //   known-answer vectors, random ECB traffic in both directions, handshake
 //   backpressure, sideband passthrough, key reload and reset recovery.
+//   +SEED=<n> and +BLOCKS=<n> make the random phases replayable for regression.
 //
 // HOW TO INITIALISE AND USE:
 //   Compile with -D RTL_SIM from sim/, using run.sh tb_sm4_axis_ip.
@@ -46,7 +47,7 @@ module tb_sm4_axis_ip ();
   logic [TUSER_W-1:0]    s_tuser;
 
   logic                  m_tvalid;
-  logic                  m_tready;
+  logic                  m_tready = 1'b1;
   logic [127:0]          m_tdata;
   logic [ 15:0]          m_tstrb;
   logic [ 15:0]          m_tkeep;
@@ -345,7 +346,18 @@ module tb_sm4_axis_ip ();
   endfunction
 
   // ==========================================================================
-  // 3. SCOREBOARD AND DRIVERS
+  // 3. SEEDABLE RANDOM SOURCE
+  // ==========================================================================
+
+  // A local LCG keeps every regression run replayable across simulators: no
+  // simulator-specific $random state is involved.
+  function automatic logic [31:0] tb_rand();
+    rng_state = (rng_state * 32'h1664525) + 32'h10139022;
+    tb_rand = rng_state;
+  endfunction
+
+  // ==========================================================================
+  // 4. SCOREBOARD AND DRIVERS
   // ==========================================================================
 
   int match_cntr;
@@ -360,17 +372,15 @@ module tb_sm4_axis_ip ();
 
   logic [1023:0] model_rk;
   logic          model_mode;
-  int            seed;
+  int            seed_value;
+  int            block_count;
+  logic [31:0]   rng_state;
 
-  // Master backpressure: pseudo-random but replayable from a fixed seed.
-  initial begin
-    m_tready = 1'b1;
-    seed = 32'h5A5A1234;
-    forever begin
-      @(negedge clk);
-      seed = (seed * 32'h41C64E6D + 32'h3021) & 32'hFFFFFFFF;
-      m_tready = ((seed >> 16) % 3 != 0);
-    end
+  // Master backpressure: pseudo-random but replayable from +SEED=<n>. The
+  // stimulus initial block seeds rng_state at time zero, before this process
+  // first samples it at the first negedge.
+  always @(negedge clk) begin
+    m_tready = ((tb_rand() >> 16) % 3 != 0);
   end
 
   task automatic reset_seq();
@@ -473,15 +483,25 @@ module tb_sm4_axis_ip ();
   end
 
   // ==========================================================================
-  // 4. STIMULUS
+  // 5. STIMULUS
   // ==========================================================================
 
   logic [127:0] vec_key;
   logic [127:0] vec_pt;
   logic [127:0] vec_ct;
   logic [127:0] data_q;
+  logic [127:0] rnd_key;
+  int           stall;
 
   initial begin
+    if (!$value$plusargs("SEED=%d", seed_value)) seed_value = 32'h5A5A1234;
+    if (!$value$plusargs("BLOCKS=%d", block_count)) block_count = 16;
+    if (block_count < 1) begin
+      $display("RESULT = FAIL (+BLOCKS must be >= 1)");
+      $finish;
+    end
+    rng_state = 32'(seed_value);
+
     vec_key = 128'h0123456789ABCDEFfedcba9876543210;
     vec_pt  = 128'h0123456789ABCDEFfedcba9876543210;
     vec_ct  = 128'h681EDF34D206965E86B3E94F536E4246;
@@ -508,18 +528,21 @@ module tb_sm4_axis_ip ();
                vec_pt, last_out_data);
     end
 
-    // TC-03: random encrypt traffic, mixed slave-side stalls.
-    load_key(128'hFEDCBA98765432100123456789ABCDEF, 1'b0);
-    for (int i = 0; i < 16; i++) begin
-      data_q = {$random, $random, $random, $random};
-      send_beat(data_q, 4'(i % 16), 3'(i % 8), 2'(i % 4), i % 4);
+    // TC-03: random encrypt traffic with a random key and mixed slave stalls.
+    rnd_key = {tb_rand(), tb_rand(), tb_rand(), tb_rand()};
+    load_key(rnd_key, 1'b0);
+    for (int i = 0; i < block_count; i++) begin
+      data_q = {tb_rand(), tb_rand(), tb_rand(), tb_rand()};
+      stall = int'(tb_rand() % 4);
+      send_beat(data_q, 4'(i % 16), 3'(i % 8), 2'(i % 4), stall);
     end
     wait_drain();
 
     // TC-04: random decrypt traffic with master backpressure active.
-    load_key(128'hFEDCBA98765432100123456789ABCDEF, 1'b1);
-    for (int i = 0; i < 16; i++) begin
-      data_q = {$random, $random, $random, $random};
+    rnd_key = {tb_rand(), tb_rand(), tb_rand(), tb_rand()};
+    load_key(rnd_key, 1'b1);
+    for (int i = 0; i < block_count; i++) begin
+      data_q = {tb_rand(), tb_rand(), tb_rand(), tb_rand()};
       send_beat(data_q, 4'(i % 16), 3'(i % 8), 2'(i % 4), 0);
     end
     wait_drain();
@@ -559,6 +582,12 @@ module tb_sm4_axis_ip ();
 
     // TC-10: explicit known-answer recheck after reset and reload.
     if (match_cntr != beat_cntr || mismatch_cntr != 0) begin
+      $display("-------------------------------------");
+      $display("- Report Phase");
+      $display("-------------------------------------");
+      $display("MATCH      COUNTER     = %0d", match_cntr);
+      $display("MISMATCH   COUNTER     = %0d", mismatch_cntr);
+      $display("BEATS      CHECKED     = %0d", beat_cntr);
       $display("RESULT = FAIL (%0d mismatches)", mismatch_cntr);
     end
     else begin
@@ -568,6 +597,8 @@ module tb_sm4_axis_ip ();
       $display("MATCH      COUNTER     = %0d", match_cntr);
       $display("MISMATCH   COUNTER     = %0d", mismatch_cntr);
       $display("BEATS      CHECKED     = %0d", beat_cntr);
+      $display("SEED                   = %0d", seed_value);
+      $display("BLOCKS PER PHASE       = %0d", block_count);
       $display("RESULT = PASS (%0d matches, 0 mismatches)", match_cntr);
     end
     $finish;
@@ -576,6 +607,9 @@ module tb_sm4_axis_ip ();
   // Hang guard: a stalled handshake can never be reported as PASS.
   initial begin
     #500000;
+    $display("MATCH      COUNTER     = %0d", match_cntr);
+    $display("MISMATCH   COUNTER     = %0d", mismatch_cntr);
+    $display("BEATS      CHECKED     = %0d", beat_cntr);
     $display("RESULT = FAIL (timeout)");
     $finish;
   end
