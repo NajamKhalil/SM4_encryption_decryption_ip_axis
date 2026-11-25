@@ -1,0 +1,34 @@
+SM4 AXI4-Stream IP - multi-seed regression
+COMPILE     = iverilog -g2012 -Wall -D RTL_SIM
+RUNS        = 24
+BLOCKS      = 32 encrypt and 32 decrypt per run
+BASE SEED   = 11025
+---------------------------------------------------------------------
+RUN 001 SEED 18944      RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 002 SEED 26863      RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 003 SEED 34782      RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 004 SEED 42701      RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 005 SEED 50620      RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 006 SEED 58539      RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 007 SEED 66458      RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 008 SEED 74377      RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 009 SEED 82296      RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 010 SEED 90215      RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 011 SEED 98134      RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 012 SEED 106053     RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 013 SEED 113972     RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 014 SEED 121891     RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 015 SEED 129810     RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 016 SEED 137729     RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 017 SEED 145648     RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 018 SEED 153567     RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 019 SEED 161486     RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 020 SEED 169405     RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 021 SEED 177324     RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 022 SEED 185243     RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 023 SEED 193162     RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+RUN 024 SEED 201081     RESULT = PASS (69 matches, 0 mismatches) BEATS=69
+---------------------------------------------------------------------
+TOTAL BEATS = 1656
+FAILURES    = 0
+RESULT = PASS (multi-seed: 24/24 runs, 1656 beats, 0 failures)

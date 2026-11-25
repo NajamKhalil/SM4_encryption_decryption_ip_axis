@@ -1,0 +1,22 @@
+A testbench that has never failed proves nothing. Twelve deliberate bugs were injected into temporary copies of the RTL, one at a time, and the full multi-seed regression was re-run against each.
+Every mutation ran against the final revision of the RTL and testbench, so these numbers describe the code that ships.
+REGRESSION = 24 runs x 32 encrypt blocks x 32 decrypt blocks per mutant
+---------------------------------------------------------------------
+Caught - 12 of 12
+# | Mutation | First failure reported
+M01 | S-box byte 00 maps to D7 instead of D6 | `ERROR: bad master beat data=9476ccf56fbee415d1e7c8b2a99c05d2 id=1 dest=2 user=1 last=1` (72 mismatches)
+M02 | FK[0] is corrupted by one LSB | `ERROR: bad master beat data=3cb16f9ebc75aa1e2dbb220bdb404000 id=1 dest=2 user=1 last=1` (72 mismatches)
+M03 | CK[0] is corrupted by one LSB | `ERROR: bad master beat data=a4e392a0c4210f3d5d17e71a8b796a4d id=1 dest=2 user=1 last=1` (72 mismatches)
+M04 | round mixer rotates tau by 3 instead of 2 | `ERROR: bad master beat data=b09a210f19e1f4220ab1206ef3c87a93 id=1 dest=2 user=1 last=1` (72 mismatches)
+M05 | key mixer rotates tau by 14 instead of 13 | `ERROR: bad master beat data=5527ee92acbf823d00676b95c4a2f9a8 id=1 dest=2 user=1 last=1` (72 mismatches)
+M06 | decrypt consumes round keys in forward order | `ERROR: bad master beat data=f324184f3c8892b72bdc9d7c612919de id=2 dest=3 user=2 last=1` (69 mismatches)
+M07 | final reverse transform emits words in the wrong order | `ERROR: bad master beat data=d206965e86b3e94f536e4246681edf34 id=1 dest=2 user=1 last=1` (72 mismatches)
+M08 | engine stops after 31 rounds instead of 32 | `ERROR: bad master beat data=d206965e86b3e94f536e42467b938f4c id=1 dest=2 user=1 last=1` (72 mismatches)
+M09 | output TLAST is forced low | `ERROR: bad master beat data=681edf34d206965e86b3e94f536e4246 id=1 dest=2 user=1 last=0` (69 mismatches)
+M10 | output TKEEP is forced to all zeros | `ERROR: bad master beat data=681edf34d206965e86b3e94f536e4246 id=1 dest=2 user=1 last=1` (69 mismatches)
+M11 | output TID no longer replays the captured sideband | `ERROR: bad master beat data=681edf34d206965e86b3e94f536e4246 id=0 dest=2 user=1 last=1` (69 mismatches)
+M12 | slave ready ignores skid-buffer occupancy | `ERROR: bad master beat data=a24bea8e7cea78b0382f392d6b32b252 id=d dest=5 user=1 last=1` (3 mismatches)
+Survivors - 0 of 12
+No mutants survived; no equivalence arguments are required.
+---------------------------------------------------------------------
+RESULT = PASS (mutation campaign: 12/12 killed, 0 survivors)

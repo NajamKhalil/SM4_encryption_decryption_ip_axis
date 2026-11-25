@@ -4,5 +4,7 @@
 MATCH      COUNTER     = 37
 MISMATCH   COUNTER     = 0
 BEATS      CHECKED     = 37
+SEED                   = 1515852340
+BLOCKS PER PHASE       = 16
 RESULT = PASS (37 matches, 0 mismatches)
-tb_sm4_axis_ip.sv:573: $finish called at 16270000 (1ps)
+tb_sm4_axis_ip.sv:604: $finish called at 16230000 (1ps)
